@@ -9,9 +9,21 @@ namespace DeTai1
     {
         private Boolean apDungThucTe;
 
-        public override double tinhToanKinhPhi()
+        public NghienCuuLyThuyet(string maDeTai, string tenDeTai, double kinhPhi, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, bool apDungThucTe)
+     : base(maDeTai, tenDeTai, kinhPhi, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
         {
-            return 0;
+            this.apDungThucTe = apDungThucTe;
+        }
+        public override double TinhToanKinhPhi()
+        {
+            if (apDungThucTe)
+            {
+                return 15000000;
+            }
+            else
+            {
+                return 8000000;
+            }
         }
     }
 }

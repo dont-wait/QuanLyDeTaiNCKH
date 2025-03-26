@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyDeTaiNCKH
 {
-    public class Class1
+    internal class Class1
     {
     }
 }

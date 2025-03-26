@@ -7,7 +7,7 @@ namespace DeTai1
 {
     public abstract class DeTaiDto
     {
-        protected string maDeTai;
+        protected string maDeTai;   
         protected string tenDeTai;
         protected double kinhPhi;
         protected DateTime thoiGianBatDau;
