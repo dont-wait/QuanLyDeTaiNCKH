@@ -9,10 +9,11 @@ namespace DeTai1
     {
         private Boolean apDungThucTe;
 
-        public NghienCuuLyThuyet(string maDeTai, string tenDeTai, double kinhPhi, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, bool apDungThucTe)
-     : base(maDeTai, tenDeTai, kinhPhi, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
+        public NghienCuuLyThuyet(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, bool apDungThucTe)
+     : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
         {
             this.apDungThucTe = apDungThucTe;
+            this.kinhPhi = TinhToanKinhPhi();
         }
         public override double TinhToanKinhPhi()
         {

@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 namespace DeTai1
 {
-    public class DeTaiKinhTeDto : DeTaiDto, IPhiNghienCuu
+    public class DeTaiKinhTeDto : DeTaiDto, IPhiHoTroNghienCuu
     {
         private int soCauHoiKhaoSat;
-        public DeTaiKinhTeDto(string maDeTai, string tenDeTai, double kinhPhi, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, int soCauHoiKhaoSat)
-        : base(maDeTai, tenDeTai, kinhPhi, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
+        public DeTaiKinhTeDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, int soCauHoiKhaoSat)
+        : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
         {
             this.soCauHoiKhaoSat = soCauHoiKhaoSat;
+            this.kinhPhi = TinhToanKinhPhi();
         }
 
         public override double TinhToanKinhPhi()
@@ -24,9 +25,9 @@ namespace DeTai1
             {
                 kinhPhi = 7000000;
             }    
-            return kinhPhi;
+            return kinhPhi - TinhPhiHoTroNghienCuu();
         }
-        public double TinhPhiNghienCuu()
+        public double TinhPhiHoTroNghienCuu()
         {
             if(soCauHoiKhaoSat > 100)
             {

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyDeTaiNCKH
 {
-    interface IPhiNghienCuu
+    interface IPhiHoTroNghienCuu
     {
-        double TinhPhiNghienCuu();
+        double TinhPhiHoTroNghienCuu();
     }
 }

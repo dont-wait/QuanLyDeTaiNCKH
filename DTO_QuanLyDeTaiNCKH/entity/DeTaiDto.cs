@@ -15,11 +15,11 @@ namespace DeTai1
         protected string hoTenSinhVien;
         protected string hoTenGiangVien;
 
-        protected DeTaiDto(string maDeTai, string tenDeTai, double kinhPhi, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien)
+        protected DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien)
         {
             this.maDeTai = maDeTai;
             this.tenDeTai = tenDeTai;
-            this.kinhPhi = kinhPhi;
+            this.kinhPhi = TinhToanKinhPhi();
             this.thoiGianBatDau = thoiGianBatDau;
             this.thoiGianKetThuc = thoiGianKetThuc;
             this.hoTenSinhVien = hoTenSinhVien;
