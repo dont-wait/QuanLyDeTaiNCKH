@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<QuanLyDeTai>
+	<DeTai loaiDeTai="NghienCuuLyThuyet">
+		<MaSo>DT001</MaSo>
+		<TenDeTai>Nghiên cứu AI trong giáo dục</TenDeTai>
+		<ApDungThucTe>true</ApDungThucTe>
+		<SinhVien>Nguyen Van A</SinhVien>
+		<ThoiGian>
+			<BatDau>2025-01-01</BatDau>
+			<KetThuc>2025-06-30</KetThuc>
+		</ThoiGian>
+		<GiangVien>Tran Van B</GiangVien>
+	</DeTai>
+
+	<DeTai loaiDeTai="KinhTe">
+		<MaSo>DT002</MaSo>
+		<TenDeTai>Phân tích xu hướng tiêu dùng</TenDeTai>
+		<SoCauHoiKhaoSat>120</SoCauHoiKhaoSat>
+		<SinhVien>Le Thi C</SinhVien>
+		<ThoiGian>
+			<BatDau>2025-02-15</BatDau>
+			<KetThuc>2025-08-30</KetThuc>
+		</ThoiGian>
+		<GiangVien>Pham Van D</GiangVien>
+	</DeTai>
+
+	<DeTai loaiDeTai="CongNghe">
+		<MaSo>DT003</MaSo>
+		<TenDeTai>Ứng dụng AI trên di động</TenDeTai>
+		<MoiTruong>mobile</MoiTruong>
+		<SinhVien>Hoang Minh E</SinhVien>
+		<ThoiGian>
+			<BatDau>2025-03-10</BatDau>
+			<KetThuc>2025-09-20</KetThuc>
+		</ThoiGian>
+		<GiangVien>Nguyen Huu F</GiangVien>
+	</DeTai>
+</QuanLyDeTai>
