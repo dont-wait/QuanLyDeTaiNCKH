@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.SqlServer.Server;
+
 
 namespace DeTai1
 {
@@ -17,13 +19,95 @@ namespace DeTai1
 
         protected DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien)
         {
-            this.maDeTai = maDeTai;
-            this.tenDeTai = tenDeTai;
+            this.MaDeTai = maDeTai;
+            this.TenDeTai = tenDeTai;
             this.kinhPhi = TinhToanKinhPhi();
             this.thoiGianBatDau = thoiGianBatDau;
             this.thoiGianKetThuc = thoiGianKetThuc;
-            this.hoTenSinhVien = hoTenSinhVien;
-            this.hoTenGiangVien = hoTenGiangVien;
+            this.HoTenSinhVien = hoTenSinhVien;
+            this.HoTenGiangVien = hoTenGiangVien;
+        }
+
+        public string MaDeTai
+        {
+            get { return maDeTai; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    maDeTai = value;
+                }
+            }
+        } 
+             
+        public string TenDeTai
+        {
+            get { return tenDeTai; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    tenDeTai = value;
+                }    
+            }
+        }
+
+        public string HoTenSinhVien
+        {
+            get { return
+                    hoTenSinhVien; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    hoTenSinhVien = value;
+                }
+            }
+        }
+
+        public string HoTenGiangVien
+        {
+            get
+            {
+                return
+                    hoTenGiangVien;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    hoTenGiangVien = value;
+                }
+            }
+        }
+
+        public double KinhPhi
+        {
+            get
+            {
+                return
+                    kinhPhi;
+            }
+            set
+            {
+                kinhPhi = value;
+            }
         }
 
         public abstract double TinhToanKinhPhi();
