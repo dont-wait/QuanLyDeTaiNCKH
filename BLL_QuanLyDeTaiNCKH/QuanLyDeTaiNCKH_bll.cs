@@ -15,32 +15,25 @@ namespace BLL_QuanLyDeTaiNCKH
         {
            
         }
-        //public List<DeTaiDto> timKiemDeTai(string tuKhoa)
-        //{ 
-        //    return danhSachDeTai.Where(dt => dt.MaDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.TenDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.HoTenGiangVien.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.HoTenSinhVien.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
-        //}
-        //public List<DeTaiDto1> timKiemDeTaiTheoGiangVien(string tenGiangVien)
-        //{
-        //    return danhSachDeTai.Where(dt => dt.HoTenGiangVien.IndexOf(tenGiangVien, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
-        //}
+        public List<DeTaiDto> timKiemDeTai(string tuKhoa)
+        {
+            return danhSachDeTai.Where(dt => dt.MaDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.TenDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.HoTenGiangVien.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+        public List<DeTaiDto> timKiemDeTaiTheoGiangVien(string tenGiangVien)
+        {
+            return danhSachDeTai.Where(dt => dt.HoTenGiangVien.IndexOf(tenGiangVien, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
 
-        //public void capNhatVaXuatKinhPhi()
-        //{
-        //    foreach (var dt in danhSachDeTai)
-        //    {
-        //        double kinhPhiMoi = dt.TinhKinhPhi() + (dt.TinhKinhPhi() * 0.1); // Tăng 10%
-        //        dt.KinhPhi = kinhPhiMoi;
-        //    }
+        public void capNhatVaXuatKinhPhi()
+        {
+            foreach (var dt in danhSachDeTai)
+            {
+                double kinhPhiMoi = dt.TinhKinhPhi() + (dt.TinhKinhPhi() * 0.1); // Tăng 10%
+                Console.WriteLine(dt);
+            }
+        }
 
-        //    dal.luuDanhSachDeTai(danhSachDeTai);
-
-        //    Console.WriteLine("Danh sách sau khi cập nhật kinh phí:");
-        //    foreach (var dt in danhSachDeTai)
-        //    {
-        //        Console.WriteLine($"Mã: {dt.MaDeTai}, Tên: {dt.TenDeTai}, Kinh phí mới: {dt.KinhPhi}");
-        //    }
-        //}
-       public List<SinhVienDto> getSinhVienInfoDetail()
+        public List<SinhVienDto> getSinhVienInfoDetail()
         {
             return dal.DocDeTaiNCKH("E:\\project\\QuanLyDeTaiNCKH\\DTO_QuanLyDeTaiNCKH\\Data.xml");
         }

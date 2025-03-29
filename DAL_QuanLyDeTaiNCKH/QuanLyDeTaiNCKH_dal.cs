@@ -17,6 +17,24 @@ namespace DAL_QuanLyDeTaiNCKH
         { get => listSinhVien; set => listSinhVien = value; }
 
 
+        //public DeTaiDto AddDeTaiDTO()
+        //{
+        //    Console.InputEncoding = Encoding.UTF8;
+        //    Console.Write("Nhập lĩnh vực của đề tài: ");
+        //    string typeNguyenCuu = Console.ReadLine();
+        //    DeTaiDto deTai = util.NewObjectByClassName(typeNguyenCuu);
+        //    Console.Write("Nhập mã đề tài: ");
+        //    deTai.MaDeTai = Console.ReadLine();
+        //    Console.Write("Nhập tên đề tài: ");
+        //    deTai.TenDeTai = Console.ReadLine();
+        //    Console.Write("Nhập thời gian bắt đầu: ");
+        //    deTai.ThoiGianBatDau = DateTime.Parse(Console.ReadLine());
+        //    Console.Write("Nhập thời gian kết thúc: ");
+        //    deTai.ThoiGianKetThuc = DateTime.Parse(Console.ReadLine());
+
+        //    return deTai;
+        //}
+
         public List<SinhVienDto> DocDeTaiNCKH(string fileName)
         {
             Console.InputEncoding = Encoding.UTF8;
