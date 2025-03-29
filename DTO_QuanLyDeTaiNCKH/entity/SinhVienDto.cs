@@ -60,7 +60,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         }
         public override string ToString()
         {
-            string deTaiStr = DanhSachDeTai != null && DanhSachDeTai.Count > 0
+            var deTaiStr = DanhSachDeTai != null && DanhSachDeTai.Count > 0
                 ? string.Join("\n  ", DanhSachDeTai.Select(dt => $"- {dt.TenDeTai} ({dt.MaDeTai})\n    GVHD: {dt.HoTenGiangVien}\n    Thời gian: Từ {dt.ThoiGianBatDau:dd-MM-yyyy} đến {dt.ThoiGianKetThuc:dd-MM-yyyy}"))
                 : "Không có đề tài nào.";
 

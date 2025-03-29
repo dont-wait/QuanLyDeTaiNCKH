@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>GUI_WINFORM_QuanLyDeTaiNCKH</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL_QuanLyDeTaiNCKH\BLL_QuanLyDeTaiNCKH.csproj" />
+    <ProjectReference Include="..\DTO_QuanLyDeTaiNCKH\DTO_QuanLyDeTaiNCKH.csproj" />
+  </ItemGroup>
+
+</Project>
