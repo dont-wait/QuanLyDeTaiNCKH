@@ -28,9 +28,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         public string MaSinhVien { 
             get => maSinhVien;
             set {
-                if(value.StartsWith("20") && value.Length == 10 && value.Substring(3).All(c => char.IsDigit(c)))
-                    maSinhVien = value;
-                throw new Exception("Mã sinh viên không hợp lệ");
+               maSinhVien = value;
             }
         }
         public string HoTen {
@@ -40,21 +38,35 @@ namespace DTO_QuanLyDeTaiNCKH.entity
                     throw new Exception("Họ tên không hợp lệ");
                 hoTen = value;
             } 
-        }     
-        
-        public string Lop { 
-            get => lop; 
-            set {
-                if (char.IsDigit(value[0]) 
-                    && char.IsDigit(value[1]) 
-                    && value.Substring(2, 5).All(char.IsLetter) 
-                    && value.Substring(6).All(c => char.IsDigit(c))
-                    && value.Length == 8)
-                    lop = value;
-                throw new Exception("Lớp không hợp lệ");
-            } 
         }
-        public override string ToString() => $"{maSinhVien} {hoTen} {lop}";
+
+        public string Lop
+        {
+            get => lop;
+            set
+            {
+                if (value.Length == 8 &&
+                    char.IsDigit(value[0]) && char.IsDigit(value[1]) &&
+                    value.Substring(2, 4).All(char.IsLetter) &&
+                    char.IsDigit(value[6]) && char.IsDigit(value[7]))
+                {
+                    lop = value;
+                }
+                else
+                {
+                    throw new Exception("Lớp không hợp lệ");
+                }
+            }
+        }
+        public override string ToString()
+        {
+            string deTaiStr = DanhSachDeTai != null && DanhSachDeTai.Count > 0
+                ? string.Join("\n  ", DanhSachDeTai.Select(dt => $"- {dt.TenDeTai} ({dt.MaDeTai})\n    GVHD: {dt.HoTenGiangVien}\n    Thời gian: {dt.ThoiGianBatDau:yyyy-MM-dd} - {dt.ThoiGianKetThuc:yyyy-MM-dd}"))
+                : "Không có đề tài nào.";
+
+            return $"Mã SV: {MaSinhVien}\nHọ Tên: {HoTen}\nLớp: {Lop}\nĐề tài:\n  {deTaiStr}";
+        }
+
         public List<DeTaiDto> DanhSachDeTai { get => danhSachDeTai; set => danhSachDeTai = value; }
         
 

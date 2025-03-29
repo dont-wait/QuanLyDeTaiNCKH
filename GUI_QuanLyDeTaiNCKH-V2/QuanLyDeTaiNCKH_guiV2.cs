@@ -13,15 +13,14 @@ namespace GUI_QuanLyDeTaiNCKHV2
 
         public QuanLyDeTaiNCKH_guiV2()
         {
+            _quanLyDeTaiNCKH_bll = new QuanLyDeTaiNCKH_bll();
         }
 
         public void ShowSinhVienInfoDetail()
         {
             List<SinhVienDto> listSinhVien =  _quanLyDeTaiNCKH_bll.getSinhVienInfoDetail();
             foreach(SinhVienDto sv in listSinhVien)
-            {
-                sv.ToString();
-            }
+                Console.WriteLine(sv); 
         }
     }
 }

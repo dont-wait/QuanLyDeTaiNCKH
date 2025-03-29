@@ -20,10 +20,7 @@
 			<TenDeTai>Ứng dụng Blockchain</TenDeTai>
 			<ThoiGianBatDau>2024-02-15</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-08-15</ThoiGianKetThuc>
-			<GiangVien>
-				<MaGiangVien>GV002</MaGiangVien>
-				<TenGiangVien>Trần Thị Hai</TenGiangVien>
-			</GiangVien>
+			<TenGiangVien>Trần Thị Hai</TenGiangVien>
 		</DeTai>
 	</SinhVien>
 
@@ -36,10 +33,7 @@
 			<TenDeTai>Phát triển IoT</TenDeTai>
 			<ThoiGianBatDau>2024-03-10</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-09-10</ThoiGianKetThuc>
-			<GiangVien>
-				<MaGiangVien>GV003</MaGiangVien>
-				<TenGiangVien>Nguyễn Anh Ba</TenGiangVien>
-			</GiangVien>
+			<TenGiangVien>Nguyễn Anh Ba</TenGiangVien>
 		</DeTai>
 	</SinhVien>
 </DanhSachSinhVien>

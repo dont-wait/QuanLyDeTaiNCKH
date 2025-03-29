@@ -19,7 +19,8 @@ namespace DAL_QuanLyDeTaiNCKH
 
         public List<SinhVienDto> DocDeTaiNCKH(string fileName)
         {
-           
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
             XmlDocument read = new XmlDocument();
             read.Load(fileName);
 
@@ -27,9 +28,9 @@ namespace DAL_QuanLyDeTaiNCKH
             foreach(XmlNode sv in sinhviens)
             {
                 SinhVienDto sinhvien = new SinhVienDto();
-                sinhvien.MaSinhVien = sv.SelectSingleNode("MaSinhVien").InnerText;
-                sinhvien.HoTen = sv.SelectSingleNode("HoTen").InnerText;
-                sinhvien.Lop = sv.SelectSingleNode("Lop").InnerText;
+                sinhvien.MaSinhVien = sv["MaSinhVien"].InnerText;
+                sinhvien.HoTen = sv["HoTen"].InnerText;
+                sinhvien.Lop = sv["Lop"].InnerText;
                 List<DeTaiDto> deTais = new List<DeTaiDto>();
                 
                 XmlNodeList detais = sv.SelectNodes("DeTai");
@@ -37,13 +38,15 @@ namespace DAL_QuanLyDeTaiNCKH
                 {
                     string typeNguyenCuu = dt.Attributes["linhVuc"].Value;
                     DeTaiDto deTai = util.NewObjectByClassName(typeNguyenCuu);
-                    deTai.MaDeTai = dt.SelectSingleNode("MaDeTai").InnerText;
-                    deTai.TenDeTai = dt.SelectSingleNode("TenDeTai").InnerText;
-                    deTai.HoTenGiangVien = dt.SelectSingleNode("TenGiangVien").InnerText;
-                    deTai.ThoiGianBatDau = DateTime.Parse(dt.SelectSingleNode("ThoiGianBatDau").InnerText);
-                    deTai.ThoiGianKetThuc = DateTime.Parse(dt.SelectSingleNode("ThoiGianKetThuc").InnerText);
+                    deTai.MaDeTai = dt["MaDeTai"].InnerText;                 
+                    deTai.TenDeTai = dt["TenDeTai"] .InnerText;
                     
+                    deTai.ThoiGianBatDau = DateTime.Parse(dt["ThoiGianBatDau"].InnerText);
+                    deTai.ThoiGianKetThuc = DateTime.Parse(dt["ThoiGianKetThuc"].InnerText);
+                    deTai.HoTenGiangVien = dt["TenGiangVien"].InnerText;
+                    deTais.Add(deTai);
                 }
+                sinhvien.DanhSachDeTai = deTais;
                 listSinhVien.Add(sinhvien);
             }
 
