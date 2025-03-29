@@ -9,22 +9,22 @@ namespace DeTai1
     {
         private Boolean apDungThucTe;
 
-        public NghienCuuLyThuyet(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, bool apDungThucTe)
-     : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
+        public NghienCuuLyThuyet(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, bool apDungThucTe)
+     : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc)
         {
             this.apDungThucTe = apDungThucTe;
-            this.kinhPhi = TinhToanKinhPhi();
         }
-        public override double TinhToanKinhPhi()
+
+        public override double TinhKinhPhi()
         {
             if (apDungThucTe)
-            {
                 return 15000000;
-            }
-            else
-            {
-                return 8000000;
-            }
+            return 8000000;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"{apDungThucTe}";
         }
     }
 }

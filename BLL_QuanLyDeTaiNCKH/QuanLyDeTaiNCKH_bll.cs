@@ -26,22 +26,22 @@ namespace BLL_QuanLyDeTaiNCKH
             return danhSachDeTai.Where(dt => dt.HoTenGiangVien.IndexOf(tenGiangVien, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
 
-        public void capNhatVaXuatKinhPhi()
-        {
+        //public void capNhatVaXuatKinhPhi()
+        //{
+        //    foreach (var dt in danhSachDeTai)
+        //    {
+        //        double kinhPhiMoi = dt.TinhKinhPhi() + (dt.TinhKinhPhi() * 0.1); // Tăng 10%
+        //        dt.KinhPhi = kinhPhiMoi;
+        //    }
 
-            foreach (var dt in danhSachDeTai)
-            {
-                dt.KinhPhi = dt.KinhPhi + (dt.KinhPhi * 0.1); // Tăng 10%
-            }
+        //    dal.luuDanhSachDeTai(danhSachDeTai);
 
-            dal.luuDanhSachDeTai(danhSachDeTai); 
-
-            Console.WriteLine("Danh sách sau khi cập nhật kinh phí:");
-            foreach (var dt in danhSachDeTai)
-            {
-                Console.WriteLine($"Mã: {dt.MaDeTai}, Tên: {dt.TenDeTai}, Kinh phí mới: {dt.KinhPhi}");
-            }
-        }
+        //    Console.WriteLine("Danh sách sau khi cập nhật kinh phí:");
+        //    foreach (var dt in danhSachDeTai)
+        //    {
+        //        Console.WriteLine($"Mã: {dt.MaDeTai}, Tên: {dt.TenDeTai}, Kinh phí mới: {dt.KinhPhi}");
+        //    }
+        //}
 
     }
 }

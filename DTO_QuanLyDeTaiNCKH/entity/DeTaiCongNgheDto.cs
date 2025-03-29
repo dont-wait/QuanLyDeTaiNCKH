@@ -6,55 +6,44 @@ using System.Text;
 
 namespace DeTai1
 {
-    public class DeTaiCongNgheDto : DeTaiDto, IPhiHoTroNghienCuu    
+    public class DeTaiCongNgheDto : DeTaiDto, IPhiHoTroNghienCuu
     {
         private string moiTruongThucHien;
 
-        public DeTaiCongNgheDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien, string hoTenGiangVien, string moiTruongThucHien)
-       : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenSinhVien, hoTenGiangVien)
+        public DeTaiCongNgheDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string moiTruongThucHien) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc)
         {
             this.moiTruongThucHien = moiTruongThucHien;
-            this.kinhPhi = TinhToanKinhPhi();
         }
+
 
         public double TinhPhiHoTroNghienCuu()
         {
+            Console.OutputEncoding = Encoding.UTF8;
             if (moiTruongThucHien.ToLower() == "mobie")
-            {
                 return 1000000;
-            }
             else if (moiTruongThucHien.ToLower() == "web")
-            {
                 return 800000;
-            }
             else if (moiTruongThucHien.ToLower() == "window")
-            {
                 return 500000;
-            }
             else
-            {
-                throw new Exception("Moi Truong khong hop le!!!");
-            }
+                throw new Exception("Môi trường không hợp lệ!!!");
         }
 
-      
-
-        public override double TinhToanKinhPhi()
+        public override double TinhKinhPhi()
         {
-            if(moiTruongThucHien.ToLower() == "mobile" || moiTruongThucHien.ToLower() == "web")
-            {
+            double kinhPhi = 0;
+            if (moiTruongThucHien.ToLower() == "mobile" || moiTruongThucHien.ToLower() == "web")
                 kinhPhi = 15000000;
-            }
             else if (moiTruongThucHien.ToLower() == "window")
-            {
-                kinhPhi = 10000000; 
-            }
+                kinhPhi = 10000000;
             else
-            {
-                throw new ArgumentException("moi truong khong hop le.");
-            }
-
+                throw new ArgumentException("Môi trường không hợp lệ");
             return kinhPhi - TinhPhiHoTroNghienCuu();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"{moiTruongThucHien}";
         }
     }
 }

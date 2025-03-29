@@ -16,7 +16,8 @@ namespace DAL_QuanLyDeTaiNCKH
         {
             return danhSachDeTai;
         }
-        public void docDeTaiNCKH(string fileName)
+
+        public void DocDeTaiNCKH(string fileName)
         {
             throw new NotImplementedException();
         }
