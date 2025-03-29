@@ -10,7 +10,7 @@ namespace BLL_QuanLyDeTaiNCKH
     public class QuanLyDeTaiNCKH_bll
     {
         private QuanLyDeTaiNCKH_dal dal = new QuanLyDeTaiNCKH_dal();
-        private List<DeTaiDto> danhSachDeTai;// danh sách các đề tài nghiên cứu khoa học.
+        private List<DeTaiDto> danhSachDeTai;
         public QuanLyDeTaiNCKH_bll()
         {
            
