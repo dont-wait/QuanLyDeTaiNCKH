@@ -10,11 +10,14 @@ namespace DTO_QuanLyDeTaiNCKH.entity
     {
         private string moiTruongThucHien;
 
-        public DeTaiCongNgheDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string moiTruongThucHien) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc)
+        public DeTaiCongNgheDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenGiangVien, string moiTruongThucHien) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenGiangVien)
         {
             this.moiTruongThucHien = moiTruongThucHien;
         }
 
+        public DeTaiCongNgheDto()
+        {
+        }
 
         public double TinhPhiHoTroNghienCuu()
         {

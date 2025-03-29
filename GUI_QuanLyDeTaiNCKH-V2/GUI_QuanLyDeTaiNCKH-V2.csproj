@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A365482-BA60-4954-9DD2-A085CFC0F758}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DAL_QuanLyDeTaiNCKH</RootNamespace>
-    <AssemblyName>DAL_QuanLyDeTaiNCKH</AssemblyName>
+    <ProjectGuid>{7990CC48-1830-49D0-B4C6-037AEBECF932}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GUI_QuanLyDeTaiNCKH_V2</RootNamespace>
+    <AssemblyName>GUI_QuanLyDeTaiNCKH-V2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,18 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyDeTaiNCKH_dal.cs" />
-    <Compile Include="Util.cs" />
+    <Compile Include="QuanLyDeTaiNCKH_guiV2.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL_QuanLyDeTaiNCKH\BLL_QuanLyDeTaiNCKH.csproj">
+      <Project>{94a833b4-21f9-4a47-80e3-d1d7aa6b452c}</Project>
+      <Name>BLL_QuanLyDeTaiNCKH</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO_QuanLyDeTaiNCKH\DTO_QuanLyDeTaiNCKH.csproj">
       <Project>{5db39d81-65eb-4c63-962d-d55ce8f8c5de}</Project>
       <Name>DTO_QuanLyDeTaiNCKH</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

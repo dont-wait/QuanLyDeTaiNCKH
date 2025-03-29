@@ -13,7 +13,6 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         private string hoTen;
         private string lop;
         private List<DeTaiDto> danhSachDeTai;
-
         public SinhVienDto()
         {
             new List<DeTaiDto>();

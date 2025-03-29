@@ -13,21 +13,65 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         protected string tenDeTai;
         protected DateTime thoiGianBatDau;
         protected DateTime thoiGianKetThuc;
+        protected string hoTenGiangVien;
 
-        public DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien)
+        public DeTaiDto() { }
+
+        protected DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenGiangVien)
         {
             MaDeTai = maDeTai;
             TenDeTai = tenDeTai;
             this.thoiGianBatDau = thoiGianBatDau;
             this.thoiGianKetThuc = thoiGianKetThuc;
+            HoTenGiangVien = hoTenGiangVien;
         }
 
-        protected DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
+       public DateTime ThoiGianBatDau
         {
-            this.maDeTai = maDeTai;
-            this.tenDeTai = tenDeTai;
-            this.thoiGianBatDau = thoiGianBatDau;
-            this.thoiGianKetThuc = thoiGianKetThuc;
+            get { return thoiGianBatDau; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    thoiGianBatDau = value;
+                }
+            }
+        }
+
+        public DateTime ThoiGianKetThuc
+        {
+            get { return thoiGianKetThuc; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    thoiGianKetThuc = value;
+                }
+            }
+        }
+
+        public string HoTenGiangVien
+        {
+            get { return hoTenGiangVien; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Khong Hop Le!");
+                }
+                else
+                {
+                    hoTenGiangVien = value;
+                }
+            }
         }
 
         public string MaDeTai
@@ -63,6 +107,6 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         }
 
         public abstract double TinhKinhPhi();
-        public override string ToString() => $"{maDeTai} {tenDeTai} {thoiGianBatDau} {thoiGianKetThuc}";
+        public override string ToString() => $"{maDeTai} {tenDeTai} {hoTenGiangVien} {thoiGianBatDau} {thoiGianKetThuc}";
     }
 }

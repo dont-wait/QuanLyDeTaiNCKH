@@ -5,14 +5,17 @@ using System.Text;
 
 namespace DTO_QuanLyDeTaiNCKH.entity
 {
-    public class NghienCuuLyThuyet : DeTaiDto
+    public class DeTaiLyThuyetDto : DeTaiDto
     {
         private Boolean apDungThucTe;
 
-        public NghienCuuLyThuyet(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, bool apDungThucTe)
-     : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc)
+        public DeTaiLyThuyetDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenGiangVien, Boolean apDungThucTe) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenGiangVien)
         {
             this.apDungThucTe = apDungThucTe;
+        }
+        
+        public DeTaiLyThuyetDto()
+        {
         }
 
         public override double TinhKinhPhi()

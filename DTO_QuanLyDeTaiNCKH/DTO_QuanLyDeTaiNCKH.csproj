@@ -45,11 +45,15 @@
     <Compile Include="entity\DeTaiDto.cs" />
     <Compile Include="entity\DeTaiLyThuyetDto.cs" />
     <Compile Include="entity\DeTaiKinhTeDto.cs" />
+    <Compile Include="entity\SinhVienDto.cs" />
     <Compile Include="IPhiHoTroNghienCuu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassObject.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

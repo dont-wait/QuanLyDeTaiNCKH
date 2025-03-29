@@ -3,14 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DTO_QuanLyDeTaiNCKH.entity;
 namespace DeTai1
 {
     public class DeTaiKinhTeDto : DeTaiDto, IPhiHoTroNghienCuu
     {
         private int soCauHoiKhaoSat;
-        public DeTaiKinhTeDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, int soCauHoiKhaoSat) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc)
+        public DeTaiKinhTeDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenGiangVien, int soCauHoiKhaoSat) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenGiangVien)
         {
             this.soCauHoiKhaoSat = soCauHoiKhaoSat;
+        }
+
+        public DeTaiKinhTeDto()
+        {
         }
 
         public double TinhPhiHoTroNghienCuu()

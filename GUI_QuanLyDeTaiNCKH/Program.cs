@@ -10,7 +10,8 @@ namespace GUI_QuanLyDeTaiNCKH
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            QuanLyDeTaiNCKH_gui quanLyDeTaiNCKH_gui = new QuanLyDeTaiNCKH_gui();
+            quanLyDeTaiNCKH_gui.ShowSinhVienInfoDetail();
         }
     }
 }
