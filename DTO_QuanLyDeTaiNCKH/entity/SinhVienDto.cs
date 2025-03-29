@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyDeTaiNCKH.entity
 {
-    class SinhVienDto
+    public class SinhVienDto
     {
         private string maSinhVien;
         private string hoTen;

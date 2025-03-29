@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using DeTai1;
-using DTO_QuanLyDeTaiNCKH;
-
+using DTO_QuanLyDeTaiNCKH.entity;
 namespace DAL_QuanLyDeTaiNCKH
 {
-    public class QuanLyDeTaiNCKH_dal : IDALRepository
+    public class QuanLyDeTaiNCKH_dal
     {
         private List<DeTaiDto> danhSachDeTai = new List<DeTaiDto>();
 
@@ -17,9 +17,13 @@ namespace DAL_QuanLyDeTaiNCKH
             return danhSachDeTai;
         }
 
-        public void DocDeTaiNCKH(string fileName)
+        public List<SinhVienDto> DocDeTaiNCKH(string fileName)
         {
-            throw new NotImplementedException();
+            XmlDocument read = new XmlDocument();
+            read.Load(fileName);
+
         }
+
+        
     }
 }

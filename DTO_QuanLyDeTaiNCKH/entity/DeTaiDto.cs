@@ -14,7 +14,7 @@ namespace DeTai1
         protected DateTime thoiGianBatDau;
         protected DateTime thoiGianKetThuc;
 
-        public DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
+        public DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenSinhVien)
         {
             MaDeTai = maDeTai;
             TenDeTai = tenDeTai;
@@ -22,6 +22,13 @@ namespace DeTai1
             this.thoiGianKetThuc = thoiGianKetThuc;
         }
 
+        protected DeTaiDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
+        {
+            this.maDeTai = maDeTai;
+            this.tenDeTai = tenDeTai;
+            this.thoiGianBatDau = thoiGianBatDau;
+            this.thoiGianKetThuc = thoiGianKetThuc;
+        }
 
         public string MaDeTai
         {

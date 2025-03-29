@@ -1,38 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<QuanLyDeTai>
-	<DeTai loaiDeTai="NghienCuuLyThuyet">
-		<MaSo>DT001</MaSo>
-		<TenDeTai>Nghiên cứu AI trong giáo dục</TenDeTai>
-		<ApDungThucTe>true</ApDungThucTe>
-		<SinhVien>Nguyen Van A</SinhVien>
-		<ThoiGian>
-			<BatDau>2025-01-01</BatDau>
-			<KetThuc>2025-06-30</KetThuc>
-		</ThoiGian>
-		<GiangVien>Tran Van B</GiangVien>
-	</DeTai>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DanhSachSinhVien>
+	<SinhVien>
+		<MaSinhVien>2001230001</MaSinhVien>
+		<HoTen>Hodden Caufield</HoTen>
+		<Lop>14DHTH01</Lop>
+		<DeTai>
+			<MaDeTai>DT001</MaDeTai>
+			<TenDeTai>Mô hình sinh trắc học</TenDeTai>
+			<ThoiGianBatDau>2024-01-01</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-06-01</ThoiGianKetThuc>
+			<GiangVien>
+				<MaGiangVien>GV001</MaGiangVien>
+				<TenGiangVien>Hoàng Nguyễn Thế</TenGiangVien>
+			</GiangVien>
+		</DeTai>
+		<DeTai>
+			<MaDeTai>DT002</MaDeTai>
+			<TenDeTai>Ứng dụng Blockchain</TenDeTai>
+			<ThoiGianBatDau>2024-02-15</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-08-15</ThoiGianKetThuc>
+			<GiangVien>
+				<MaGiangVien>GV002</MaGiangVien>
+				<TenGiangVien>Trần Thị Hai</TenGiangVien>
+			</GiangVien>
+		</DeTai>
+	</SinhVien>
 
-	<DeTai loaiDeTai="KinhTe">
-		<MaSo>DT002</MaSo>
-		<TenDeTai>Phân tích xu hướng tiêu dùng</TenDeTai>
-		<SoCauHoiKhaoSat>120</SoCauHoiKhaoSat>
-		<SinhVien>Le Thi C</SinhVien>
-		<ThoiGian>
-			<BatDau>2025-02-15</BatDau>
-			<KetThuc>2025-08-30</KetThuc>
-		</ThoiGian>
-		<GiangVien>Pham Van D</GiangVien>
-	</DeTai>
-
-	<DeTai loaiDeTai="CongNghe">
-		<MaSo>DT003</MaSo>
-		<TenDeTai>Ứng dụng AI trên di động</TenDeTai>
-		<MoiTruong>mobile</MoiTruong>
-		<SinhVien>Hoang Minh E</SinhVien>
-		<ThoiGian>
-			<BatDau>2025-03-10</BatDau>
-			<KetThuc>2025-09-20</KetThuc>
-		</ThoiGian>
-		<GiangVien>Nguyen Huu F</GiangVien>
-	</DeTai>
-</QuanLyDeTai>
+	<SinhVien>
+		<MaSinhVien>2001239999</MaSinhVien>
+		<HoTen>Nguyễn Chín</HoTen>
+		<Lop>19DHBM02</Lop>
+		<DeTai>
+			<MaDeTai>DT003</MaDeTai>
+			<TenDeTai>Phát triển IoT</TenDeTai>
+			<ThoiGianBatDau>2024-03-10</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-09-10</ThoiGianKetThuc>
+			<GiangVien>
+				<MaGiangVien>GV003</MaGiangVien>
+				<TenGiangVien>Nguyễn Anh Ba</TenGiangVien>
+			</GiangVien>
+		</DeTai>
+	</SinhVien>
+</DanhSachSinhVien>
