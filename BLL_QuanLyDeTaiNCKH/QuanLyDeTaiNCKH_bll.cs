@@ -35,7 +35,7 @@ namespace BLL_QuanLyDeTaiNCKH
 
         public List<SinhVienDto> getSinhVienInfoDetail()
         {
-            return dal.DocDeTaiNCKH("E:\\project\\QuanLyDeTaiNCKH\\DTO_QuanLyDeTaiNCKH\\Data.xml");
+            return dal.DocDeTaiNCKH("../../../Data/Data.xml");
         }
         public void XuatTTSinhVien()
         {
