@@ -52,8 +52,5 @@
   <ItemGroup>
     <None Include="ClassObject.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data.xml" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,7 +11,7 @@ namespace GUI_QuanLyDeTaiNCKH_V2
         static void Main(string[] args)
         {
             QuanLyDeTaiNCKH_guiV2 gui = new QuanLyDeTaiNCKH_guiV2();
-            gui.ShowSinhVienInfoDetail();
+            gui.HandleMenu();
         }
     }
 }

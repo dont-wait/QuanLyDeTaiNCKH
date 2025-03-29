@@ -32,4 +32,144 @@
 			<TenGiangVien>Nguyễn Anh Ba</TenGiangVien>
 		</DeTai>
 	</SinhVien>
+
+	<!-- Sinh viên 1 -->
+	<SinhVien>
+		<MaSinhVien>2001240001</MaSinhVien>
+		<HoTen>Trần Văn An</HoTen>
+		<Lop>20DHTH01</Lop>
+		<DeTai linhVuc="CongNghe">
+			<MaDeTai>DT004</MaDeTai>
+			<TenDeTai>Phân tích dữ liệu lớn</TenDeTai>
+			<ThoiGianBatDau>2024-01-15</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-07-15</ThoiGianKetThuc>
+			<TenGiangVien>Lê Thị Hồng</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="KinhTe">
+			<MaDeTai>DT005</MaDeTai>
+			<TenDeTai>Ứng dụng Fintech</TenDeTai>
+			<ThoiGianBatDau>2024-02-01</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-08-01</ThoiGianKetThuc>
+			<TenGiangVien>Phạm Văn Đức</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="LyThuyet">
+			<MaDeTai>DT006</MaDeTai>
+			<TenDeTai>Mô hình học máy</TenDeTai>
+			<ThoiGianBatDau>2024-03-01</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-09-01</ThoiGianKetThuc>
+			<TenGiangVien>Nguyễn Thị Lan</TenGiangVien>
+		</DeTai>
+	</SinhVien>
+
+	<!-- Sinh viên 2 -->
+	<SinhVien>
+		<MaSinhVien>2001240002</MaSinhVien>
+		<HoTen>Lê Thị Bích</HoTen>
+		<Lop>20DHBM01</Lop>
+		<DeTai linhVuc="CongNghe">
+			<MaDeTai>DT007</MaDeTai>
+			<TenDeTai>Ứng dụng AI trong y tế</TenDeTai>
+			<ThoiGianBatDau>2024-01-20</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-07-20</ThoiGianKetThuc>
+			<TenGiangVien>Trần Văn Hùng</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="KinhTe">
+			<MaDeTai>DT008</MaDeTai>
+			<TenDeTai>Phân tích thị trường</TenDeTai>
+			<ThoiGianBatDau>2024-02-10</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-08-10</ThoiGianKetThuc>
+			<TenGiangVien>Hoàng Thị Mai</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="LyThuyet">
+			<MaDeTai>DT009</MaDeTai>
+			<TenDeTai>Mô hình dự đoán</TenDeTai>
+			<ThoiGianBatDau>2024-03-15</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-09-15</ThoiGianKetThuc>
+			<TenGiangVien>Nguyễn Văn Nam</TenGiangVien>
+		</DeTai>
+	</SinhVien>
+
+	<!-- Sinh viên 3 -->
+	<SinhVien>
+		<MaSinhVien>2001240003</MaSinhVien>
+		<HoTen>Phạm Quốc Cường</HoTen>
+		<Lop>20DHTH02</Lop>
+		<DeTai linhVuc="CongNghe">
+			<MaDeTai>DT010</MaDeTai>
+			<TenDeTai>Ứng dụng IoT trong nông nghiệp</TenDeTai>
+			<ThoiGianBatDau>2024-01-25</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-07-25</ThoiGianKetThuc>
+			<TenGiangVien>Lê Văn Tâm</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="KinhTe">
+			<MaDeTai>DT011</MaDeTai>
+			<TenDeTai>Phân tích tài chính</TenDeTai>
+			<ThoiGianBatDau>2024-02-20</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-08-20</ThoiGianKetThuc>
+			<TenGiangVien>Trần Thị Ngọc</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="LyThuyet">
+			<MaDeTai>DT012</MaDeTai>
+			<TenDeTai>Mô hình tối ưu hóa</TenDeTai>
+			<ThoiGianBatDau>2024-03-20</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-09-20</ThoiGianKetThuc>
+			<TenGiangVien>Phạm Văn Hùng</TenGiangVien>
+		</DeTai>
+	</SinhVien>
+
+	<!-- Sinh viên 4 -->
+	<SinhVien>
+		<MaSinhVien>2001240004</MaSinhVien>
+		<HoTen>Nguyễn Thị Duyên</HoTen>
+		<Lop>20DHBM02</Lop>
+		<DeTai linhVuc="CongNghe">
+			<MaDeTai>DT013</MaDeTai>
+			<TenDeTai>Ứng dụng Blockchain trong logistics</TenDeTai>
+			<ThoiGianBatDau>2024-01-30</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-07-30</ThoiGianKetThuc>
+			<TenGiangVien>Hoàng Văn Long</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="KinhTe">
+			<MaDeTai>DT014</MaDeTai>
+			<TenDeTai>Phân tích rủi ro</TenDeTai>
+			<ThoiGianBatDau>2024-02-25</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-08-25</ThoiGianKetThuc>
+			<TenGiangVien>Lê Thị Thu</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="LyThuyet">
+			<MaDeTai>DT015</MaDeTai>
+			<TenDeTai>Mô hình dự báo thời tiết</TenDeTai>
+			<ThoiGianBatDau>2024-03-25</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-09-25</ThoiGianKetThuc>
+			<TenGiangVien>Nguyễn Văn Bình</TenGiangVien>
+		</DeTai>
+	</SinhVien>
+
+	<!-- Sinh viên 5 -->
+	<SinhVien>
+		<MaSinhVien>2001240005</MaSinhVien>
+		<HoTen>Hoàng Văn Em</HoTen>
+		<Lop>20DHTH03</Lop>
+		<DeTai linhVuc="CongNghe">
+			<MaDeTai>DT016</MaDeTai>
+			<TenDeTai>Ứng dụng AI trong giáo dục</TenDeTai>
+			<ThoiGianBatDau>2024-02-01</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-08-01</ThoiGianKetThuc>
+			<TenGiangVien>Trần Văn Khánh</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="KinhTe">
+			<MaDeTai>DT017</MaDeTai>
+			<TenDeTai>Phân tích kinh tế vĩ mô</TenDeTai>
+			<ThoiGianBatDau>2024-03-01</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-09-01</ThoiGianKetThuc>
+			<TenGiangVien>Phạm Thị Hoa</TenGiangVien>
+		</DeTai>
+		<DeTai linhVuc="LyThuyet">
+			<MaDeTai>DT018</MaDeTai>
+			<TenDeTai>Mô hình học sâu</TenDeTai>
+			<ThoiGianBatDau>2024-04-01</ThoiGianBatDau>
+			<ThoiGianKetThuc>2024-10-01</ThoiGianKetThuc>
+			<TenGiangVien>Nguyễn Văn Thắng</TenGiangVien>
+		</DeTai>
+	</SinhVien>
 </DanhSachSinhVien>

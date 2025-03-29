@@ -58,13 +58,25 @@ namespace DTO_QuanLyDeTaiNCKH.entity
                 }
             }
         }
+
         public override string ToString()
         {
-            string deTaiStr = DanhSachDeTai != null && DanhSachDeTai.Count > 0
-                ? string.Join("\n  ", DanhSachDeTai.Select(dt => $"- {dt.TenDeTai} ({dt.MaDeTai})\n    GVHD: {dt.HoTenGiangVien}\n    Thời gian: Từ {dt.ThoiGianBatDau:dd-MM-yyyy} đến {dt.ThoiGianKetThuc:dd-MM-yyyy}"))
-                : "Không có đề tài nào.";
+            if (DanhSachDeTai == null || DanhSachDeTai.Count == 0)
+            {
+                return $"│ {MaSinhVien.PadRight(11)}│ {HoTen.PadRight(21)}│ {Lop.PadRight(11)}│ {"Không có đề tài nào trong danh sách này.".PadRight(89)}│";
+            }
 
-            return $"Mã SV: {MaSinhVien}\nHọ Tên: {HoTen}\nLớp: {Lop}\nĐề tài:\n  {deTaiStr}";
+            string firstLine = $"│ {MaSinhVien.PadRight(11)}│ {HoTen.PadRight(21)}│ {Lop.PadRight(11)}│ {DanhSachDeTai[0].MaDeTai.PadRight(6)}{DanhSachDeTai[0].TenDeTai.PadRight(37)}{DanhSachDeTai[0].GetTypeOfDeTai().PadRight(12)}{DanhSachDeTai[0].ThoiGianBatDau:dd/MM/yyyy} {DanhSachDeTai[0].ThoiGianKetThuc:dd/MM/yyyy} {DanhSachDeTai[0].HoTenGiangVien.PadRight(20)}│";
+
+            if (DanhSachDeTai.Count == 1)
+            {
+                return firstLine;
+            }
+
+            var additionalLines = DanhSachDeTai.Skip(1).Select(dt =>
+                $"│ {"".PadRight(11)}│ {"".PadRight(21)}│ {"".PadRight(11)}│ {dt.MaDeTai.PadRight(6)}{dt.TenDeTai.PadRight(37)}{dt.GetTypeOfDeTai().PadRight(12)}{dt.ThoiGianBatDau:dd/MM/yyyy} {dt.ThoiGianKetThuc:dd/MM/yyyy} {dt.HoTenGiangVien.PadRight(20)}│");
+
+            return firstLine + "\n" + string.Join("\n", additionalLines);
         }
 
         public List<DeTaiDto> DanhSachDeTai { get => danhSachDeTai; set => danhSachDeTai = value; }

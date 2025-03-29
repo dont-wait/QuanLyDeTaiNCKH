@@ -48,5 +48,10 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         {
             return base.ToString() + $"{moiTruongThucHien}";
         }
+
+        public override string GetTypeOfDeTai()
+        {
+            return "Công nghệ";
+        }
     }
 }

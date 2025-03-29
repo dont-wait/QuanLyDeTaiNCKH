@@ -71,18 +71,5 @@ namespace DAL_QuanLyDeTaiNCKH
             return listSinhVien;
         }
 
-        public void XuatTTSinhVien()
-        {
-            foreach(SinhVienDto sv in listSinhVien)
-            {
-                sv.ToString();
-            }
-        }
-
-
-
-
-
-
     }
 }

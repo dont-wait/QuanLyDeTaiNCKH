@@ -43,5 +43,10 @@ namespace DeTai1
             return base.ToString() + $"{soCauHoiKhaoSat}";
 
         }
+
+        public override string GetTypeOfDeTai()
+        {
+            return "Kinh tế";
+        }
     }
 }

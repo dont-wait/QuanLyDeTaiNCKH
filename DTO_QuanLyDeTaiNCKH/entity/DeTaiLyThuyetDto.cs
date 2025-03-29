@@ -29,5 +29,10 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         {
             return base.ToString() + $"{apDungThucTe}";
         }
+
+        public override string GetTypeOfDeTai()
+        {
+            return "Lý thuyết";
+        }
     }
 }

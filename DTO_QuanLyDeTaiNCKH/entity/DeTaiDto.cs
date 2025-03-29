@@ -106,7 +106,19 @@ namespace DTO_QuanLyDeTaiNCKH.entity
             }
         }
 
+        public abstract string GetTypeOfDeTai();
+
         public abstract double TinhKinhPhi();
-        public override string ToString() => $"{maDeTai} {tenDeTai} {hoTenGiangVien} {thoiGianBatDau} {thoiGianKetThuc}";
+        public override string ToString()
+        {
+            return string.Format("| {0,-10} | {1,-20} | {2,-20} | {3,-15:dd/MM/yyyy} | {4,-15:dd/MM/yyyy} | {5,10:N2} |",
+                maDeTai, tenDeTai, GetTypeOfDeTai(),hoTenGiangVien, thoiGianBatDau, thoiGianKetThuc, TinhKinhPhi());
+        }
+
+        public static string GetTableHeader()
+        {
+            return string.Format("| {0,-10} | {1,-20} | {2,-20} | {3,-15} | {4,-15} | {5,10} |",
+                "MaDeTai", "TenDeTai", "HoTenGiangVien", "ThoiGianBatDau", "ThoiGianKetThuc", "KinhPhi");
+        }
     }
 }

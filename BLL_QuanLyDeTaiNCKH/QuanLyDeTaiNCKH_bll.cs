@@ -33,13 +33,40 @@ namespace BLL_QuanLyDeTaiNCKH
             }
         }
 
-        public List<SinhVienDto> getSinhVienInfoDetail()
+        public List<SinhVienDto> readSinhVienInfoDetail()
         {
             return dal.DocDeTaiNCKH("../../../Data/Data.xml");
         }
+
+        public void PrintHeader()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine("╔════════════╦══════════════════════╦════════════╦══════════════════════════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ Mã SV      ║ Họ Tên               ║ Lớp        ║ Mã ĐT  Tên Đề Tài                           Loại ĐT    TG BĐ       TG KT      GVHD               ║");
+            Console.WriteLine("╚════════════╧══════════════════════╧════════════╧══════════════════════════════════════════════════════════════════════════════════════════════════╝");
+        }
+
         public void XuatTTSinhVien()
         {
-            dal.XuatTTSinhVien();
+            if(dal.ListSinhVien.Count == 0)
+            {
+                Console.WriteLine("Danh sách sinh viên rỗng!");
+                return;
+            }
+            PrintHeader();
+            foreach (var sv in dal.ListSinhVien)
+            {
+                Console.WriteLine(sv);
+            }
+        }
+
+        public void GetSecret()
+        {
+            Console.WriteLine(@"Từ ấy trong tôi bừng code gạo,
+Màn hình code đỏ cứa con tim.
+Hồn tôi ngập tràn do-for-while,
+Rất nhị phân và đầy tiếng đô-la.
+                                Từ ấy");
         }
     }
 }
