@@ -4,7 +4,7 @@
 		<MaSinhVien>2001230001</MaSinhVien>
 		<HoTen>Hodden Caufield</HoTen>
 		<Lop>14DHTH01</Lop>
-		<DeTai>
+		<DeTai linhVuc="CongNghe">
 			<MaDeTai>DT001</MaDeTai>
 			<TenDeTai>Mô hình sinh trắc học</TenDeTai>
 			<ThoiGianBatDau>2024-01-01</ThoiGianBatDau>
@@ -14,7 +14,7 @@
 				<TenGiangVien>Hoàng Nguyễn Thế</TenGiangVien>
 			</GiangVien>
 		</DeTai>
-		<DeTai>
+		<DeTai linhVuc="KinhTe">
 			<MaDeTai>DT002</MaDeTai>
 			<TenDeTai>Ứng dụng Blockchain</TenDeTai>
 			<ThoiGianBatDau>2024-02-15</ThoiGianBatDau>
@@ -30,7 +30,7 @@
 		<MaSinhVien>2001239999</MaSinhVien>
 		<HoTen>Nguyễn Chín</HoTen>
 		<Lop>19DHBM02</Lop>
-		<DeTai>
+		<DeTai linhVuc="LyThuyet">
 			<MaDeTai>DT003</MaDeTai>
 			<TenDeTai>Phát triển IoT</TenDeTai>
 			<ThoiGianBatDau>2024-03-10</ThoiGianBatDau>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DeTai1
+namespace DTO_QuanLyDeTaiNCKH.entity
 {
     public class NghienCuuLyThuyet : DeTaiDto
     {

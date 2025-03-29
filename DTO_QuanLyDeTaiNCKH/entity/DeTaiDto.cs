@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.SqlServer.Server;
 
 
-namespace DeTai1
+namespace DTO_QuanLyDeTaiNCKH.entity
 {
     public abstract class DeTaiDto
     {
