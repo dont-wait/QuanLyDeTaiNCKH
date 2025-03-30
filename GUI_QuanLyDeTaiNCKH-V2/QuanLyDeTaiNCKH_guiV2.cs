@@ -10,14 +10,10 @@ namespace GUI_QuanLyDeTaiNCKHV2
     public class QuanLyDeTaiNCKH_guiV2
     {
         private readonly QuanLyDeTaiNCKH_bll _quanLyDeTaiNCKH_bll;
-        private List<SinhVienDto> sinhVienDtos = new List<SinhVienDto>();
         public QuanLyDeTaiNCKH_guiV2()
         {
             _quanLyDeTaiNCKH_bll = new QuanLyDeTaiNCKH_bll();
         }
-
-        
-
 
         public void HandleMenu()
         {
@@ -31,11 +27,11 @@ namespace GUI_QuanLyDeTaiNCKHV2
                 switch (choice)
                 {
                     case 1:
-                        sinhVienDtos = _quanLyDeTaiNCKH_bll.readSinhVienInfoDetail();
+                        _quanLyDeTaiNCKH_bll.readSinhVienInfoDetail();
                         Console.WriteLine("Đọc file thành côngg!");
                         break;
                     case 2:
-                        //AddNewDeTai();
+                       _quanLyDeTaiNCKH_bll.AddNewDeTai();
                         break;
                     case 3:
                         _quanLyDeTaiNCKH_bll.XuatTTSinhVien();
@@ -44,7 +40,7 @@ namespace GUI_QuanLyDeTaiNCKHV2
                         //SearchDeTai();
                         break;
                     case 5:
-                        //ExportDeTaiByGiangVien();
+                       _quanLyDeTaiNCKH_bll.XuatDanhSachTimKiemTheoGiangVien();
                         break;
                     case 6:
                         //UpdateKinhPhi();

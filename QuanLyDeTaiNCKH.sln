@@ -10,7 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_QuanLyDeTaiNCKH", "DTO_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_QuanLyDeTaiNCKH-V2", "GUI_QuanLyDeTaiNCKH-V2\GUI_QuanLyDeTaiNCKH-V2.csproj", "{7990CC48-1830-49D0-B4C6-037AEBECF932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI-WINFORM-QuanLyDeTaiNCKH", "GUI-WINFORM-QuanLyDeTaiNCKH\GUI-WINFORM-QuanLyDeTaiNCKH.csproj", "{7B45093A-B4D6-4189-B6A7-C397BC93B137}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		Data\Data.xml = Data\Data.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +37,6 @@ Global
 		{7990CC48-1830-49D0-B4C6-037AEBECF932}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7990CC48-1830-49D0-B4C6-037AEBECF932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7990CC48-1830-49D0-B4C6-037AEBECF932}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B45093A-B4D6-4189-B6A7-C397BC93B137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B45093A-B4D6-4189-B6A7-C397BC93B137}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B45093A-B4D6-4189-B6A7-C397BC93B137}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B45093A-B4D6-4189-B6A7-C397BC93B137}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

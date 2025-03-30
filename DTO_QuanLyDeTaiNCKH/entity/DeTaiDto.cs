@@ -21,8 +21,8 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         {
             MaDeTai = maDeTai;
             TenDeTai = tenDeTai;
-            this.thoiGianBatDau = thoiGianBatDau;
-            this.thoiGianKetThuc = thoiGianKetThuc;
+            ThoiGianBatDau = thoiGianBatDau;
+            ThoiGianKetThuc = thoiGianKetThuc;
             HoTenGiangVien = hoTenGiangVien;
         }
 
@@ -107,18 +107,19 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         }
 
         public abstract string GetTypeOfDeTai();
+        public abstract void NhapThongTinDacThu();
 
         public abstract double TinhKinhPhi();
         public override string ToString()
         {
-            return string.Format("| {0,-10} | {1,-20} | {2,-20} | {3,-15:dd/MM/yyyy} | {4,-15:dd/MM/yyyy} | {5,10:N2} |",
+            return string.Format("| {0,-10} | {1,-20} | {2,-20} | {3,-15:dd/MM/yyyy} | {4,-15:dd/MM/yyyy} | {5, 10:N2} |",
                 maDeTai, tenDeTai, GetTypeOfDeTai(),hoTenGiangVien, thoiGianBatDau, thoiGianKetThuc, TinhKinhPhi());
         }
 
         public static string GetTableHeader()
         {
-            return string.Format("| {0,-10} | {1,-20} | {2,-20} | {3,-15} | {4,-15} | {5,10} |",
-                "MaDeTai", "TenDeTai", "HoTenGiangVien", "ThoiGianBatDau", "ThoiGianKetThuc", "KinhPhi");
+            return string.Format("| {0,-10} | {1,-30} | {2,-20} | {3,-15} | {4,-15} | {5,-20} | {6,15} |",
+                "MaDeTai", "TenDeTai", "LoaiDeTai", "ThoiGianBatDau", "ThoiGianKetThuc", "HoTenGiangVien", "KinhPhi");
         }
     }
 }

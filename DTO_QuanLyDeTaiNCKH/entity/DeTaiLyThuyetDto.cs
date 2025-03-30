@@ -9,14 +9,23 @@ namespace DTO_QuanLyDeTaiNCKH.entity
     {
         private Boolean apDungThucTe;
 
+
         public DeTaiLyThuyetDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenGiangVien, Boolean apDungThucTe) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenGiangVien)
         {
-            this.apDungThucTe = apDungThucTe;
+            ApDungThucTe = apDungThucTe;
         }
         
         public DeTaiLyThuyetDto()
         {
         }
+        public bool ApDungThucTe { 
+            get => apDungThucTe; 
+            set { 
+                if(value == true || value == false)
+                    apDungThucTe = value;
+                else
+                    throw new Exception("Không hợp lệ");
+            } }
 
         public override double TinhKinhPhi()
         {
@@ -33,6 +42,36 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         public override string GetTypeOfDeTai()
         {
             return "Lý thuyết";
+        }
+
+        public override void NhapThongTinDacThu()
+        {
+            do
+            {
+                Console.Write("Đề tài có áp dụng thực tế hay không? (Yes/No): ");
+                string apDung = Console.ReadLine();
+                try
+                {
+                    if (apDung.ToLower() == "yes")
+                    {
+                        ApDungThucTe = true;
+                        break; 
+                    }
+                    else if (apDung.ToLower() == "no")
+                    {
+                        ApDungThucTe = false;
+                        break; 
+                    }
+                    else
+                    {
+                        throw new Exception("Không hợp lệ! Vui lòng nhập lại (Yes/No).");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            } while (true);
         }
     }
 }

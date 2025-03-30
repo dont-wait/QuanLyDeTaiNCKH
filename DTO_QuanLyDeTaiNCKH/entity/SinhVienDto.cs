@@ -63,10 +63,10 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         {
             if (DanhSachDeTai == null || DanhSachDeTai.Count == 0)
             {
-                return $"│ {MaSinhVien.PadRight(11)}│ {HoTen.PadRight(21)}│ {Lop.PadRight(11)}│ {"Không có đề tài nào trong danh sách này.".PadRight(89)}│";
+                return $"│ {MaSinhVien.PadRight(11)}│ {HoTen.PadRight(21)}│ {Lop.PadRight(11)}│ {"Không có đề tài nào trong danh sách này.".PadRight(120)}│";
             }
 
-            string firstLine = $"│ {MaSinhVien.PadRight(11)}│ {HoTen.PadRight(21)}│ {Lop.PadRight(11)}│ {DanhSachDeTai[0].MaDeTai.PadRight(6)}{DanhSachDeTai[0].TenDeTai.PadRight(37)}{DanhSachDeTai[0].GetTypeOfDeTai().PadRight(12)}{DanhSachDeTai[0].ThoiGianBatDau:dd/MM/yyyy} {DanhSachDeTai[0].ThoiGianKetThuc:dd/MM/yyyy} {DanhSachDeTai[0].HoTenGiangVien.PadRight(20)}│";
+            string firstLine = $"│ {MaSinhVien.PadRight(11)}│ {HoTen.PadRight(21)}│ {Lop.PadRight(11)}│ {DanhSachDeTai[0].MaDeTai.PadRight(6)}{DanhSachDeTai[0].TenDeTai.PadRight(37)}{DanhSachDeTai[0].GetTypeOfDeTai().PadRight(12)}{DanhSachDeTai[0].ThoiGianBatDau:dd/MM/yyyy} {DanhSachDeTai[0].ThoiGianKetThuc:dd/MM/yyyy} {DanhSachDeTai[0].HoTenGiangVien.PadRight(20)}{DanhSachDeTai[0].TinhKinhPhi(),15:N2}│";
 
             if (DanhSachDeTai.Count == 1)
             {
@@ -74,7 +74,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
             }
 
             var additionalLines = DanhSachDeTai.Skip(1).Select(dt =>
-                $"│ {"".PadRight(11)}│ {"".PadRight(21)}│ {"".PadRight(11)}│ {dt.MaDeTai.PadRight(6)}{dt.TenDeTai.PadRight(37)}{dt.GetTypeOfDeTai().PadRight(12)}{dt.ThoiGianBatDau:dd/MM/yyyy} {dt.ThoiGianKetThuc:dd/MM/yyyy} {dt.HoTenGiangVien.PadRight(20)}│");
+                $"│ {"".PadRight(11)}│ {"".PadRight(21)}│ {"".PadRight(11)}│ {dt.MaDeTai.PadRight(6)}{dt.TenDeTai.PadRight(37)}{dt.GetTypeOfDeTai().PadRight(12)}{dt.ThoiGianBatDau:dd/MM/yyyy} {dt.ThoiGianKetThuc:dd/MM/yyyy} {dt.HoTenGiangVien.PadRight(20)}{dt.TinhKinhPhi(),15:N2}│");
 
             return firstLine + "\n" + string.Join("\n", additionalLines);
         }
