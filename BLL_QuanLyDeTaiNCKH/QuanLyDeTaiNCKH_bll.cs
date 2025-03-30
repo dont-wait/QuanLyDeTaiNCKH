@@ -114,7 +114,7 @@ namespace BLL_QuanLyDeTaiNCKH
                 Console.WriteLine(sv);
             }
         }
-        //case 4 t làm rồi hiếu oi
+        //case 4 
         public void XuatDanhSachTimKiemDeTai()
         {
             Console.InputEncoding = Encoding.UTF8;
