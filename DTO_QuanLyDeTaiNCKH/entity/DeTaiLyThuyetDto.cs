@@ -8,7 +8,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
     public class DeTaiLyThuyetDto : DeTaiDto
     {
         private Boolean apDungThucTe;
-
+        private bool flag;
 
         public DeTaiLyThuyetDto(string maDeTai, string tenDeTai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string hoTenGiangVien, Boolean apDungThucTe) : base(maDeTai, tenDeTai, thoiGianBatDau, thoiGianKetThuc, hoTenGiangVien)
         {
@@ -55,11 +55,13 @@ namespace DTO_QuanLyDeTaiNCKH.entity
                     if (apDung.ToLower() == "yes")
                     {
                         ApDungThucTe = true;
+                        flag = true; // Đánh dấu có thể triển khai
                         break; 
                     }
                     else if (apDung.ToLower() == "no")
                     {
                         ApDungThucTe = false;
+                        flag = false;
                         break; 
                     }
                     else
@@ -73,5 +75,10 @@ namespace DTO_QuanLyDeTaiNCKH.entity
                 }
             } while (true);
         }
+        public bool danhdau()
+        {
+            return flag;
+        }
+
     }
 }
