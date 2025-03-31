@@ -30,8 +30,8 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         public override double TinhKinhPhi()
         {
             if (apDungThucTe)
-                return 15000000;
-            return 8000000;
+                return kinhPhi = 15000000;
+            return kinhPhi = 8000000;
         }
 
         public override string ToString()

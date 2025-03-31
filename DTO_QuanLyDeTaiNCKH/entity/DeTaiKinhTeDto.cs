@@ -42,10 +42,11 @@ namespace DeTai1
 
         public override double TinhKinhPhi()
         {
+
             double tinhPhiHoTro = TinhPhiHoTroNghienCuu();
             if (soCauHoiKhaoSat > 100)
-                return 12000000 - tinhPhiHoTro;
-           return 7000000 - tinhPhiHoTro;
+                return kinhPhi = 12000000 - tinhPhiHoTro;
+           return kinhPhi = 7000000 - tinhPhiHoTro;
         }
         public override string ToString()
         {

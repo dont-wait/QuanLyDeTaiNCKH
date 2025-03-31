@@ -14,6 +14,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         protected DateTime thoiGianBatDau;
         protected DateTime thoiGianKetThuc;
         protected string hoTenGiangVien;
+        protected double kinhPhi;
 
         public DeTaiDto() { }
 
@@ -24,6 +25,14 @@ namespace DTO_QuanLyDeTaiNCKH.entity
             ThoiGianBatDau = thoiGianBatDau;
             ThoiGianKetThuc = thoiGianKetThuc;
             HoTenGiangVien = hoTenGiangVien;
+        }
+
+        public double KinhPhi
+        {
+            get { return kinhPhi; }
+            set {
+                kinhPhi = TinhKinhPhi();
+            }
         }
 
        public DateTime ThoiGianBatDau
@@ -113,7 +122,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         public override string ToString()
         {
             return string.Format("| {0,-10} | {1,-20} | {2,-20} | {3,-15:dd/MM/yyyy} | {4,-15:dd/MM/yyyy} | {5, 10:N2} |",
-                maDeTai, tenDeTai, GetTypeOfDeTai(),hoTenGiangVien, thoiGianBatDau, thoiGianKetThuc, TinhKinhPhi());
+                maDeTai, tenDeTai, GetTypeOfDeTai(),hoTenGiangVien, thoiGianBatDau, thoiGianKetThuc, kinhPhi);
         }
 
         public static string GetTableHeader()

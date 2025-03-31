@@ -45,7 +45,7 @@ namespace GUI_QuanLyDeTaiNCKHV2
                        _quanLyDeTaiNCKH_bll.XuatDanhSachTimKiemTheoGiangVien();
                         break;
                     case 6:
-                        //UpdateKinhPhi();
+                        _quanLyDeTaiNCKH_bll.XuatDanhSachCacDeTaiDaDuocCapNhatKinhPhi();
                         break;
                     case 7:
                         //ExportDeTaiAbove10Trieu();

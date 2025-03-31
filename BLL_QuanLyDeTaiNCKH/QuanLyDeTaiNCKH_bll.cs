@@ -16,10 +16,7 @@ namespace BLL_QuanLyDeTaiNCKH
         {
             sinhVienDtos = new List<SinhVienDto>();
         }
-        //public List<DeTaiDto> timKiemDeTai(string tuKhoa)
-        //{
-        //   return danhSachDeTai.Where(dt => dt.MaDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.TenDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 || dt.HoTenGiangVien.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
-        //}
+        
         public List<DeTaiDto> timKiemDeTai(string tuKhoa)
         {
             
@@ -91,14 +88,27 @@ namespace BLL_QuanLyDeTaiNCKH
         }
 
 
-        //public void capNhatVaXuatKinhPhi()
-        //{
-        //    foreach (var sv in sinhVienDtos)
-        //    {
-        //        double kinhPhiMoi = dt.TinhKinhPhi() + (dt.TinhKinhPhi() * 0.1); 
-        //        Console.WriteLine(dt);
-        //    }
-        //}
+        private void capNhatVaXuatKinhPhi()
+        {
+            foreach (var sv in sinhVienDtos)
+            {
+                for(int i = 0; i < sv.DanhSachDeTai.Count; i++)
+                {
+                    sv.DanhSachDeTai[i].KinhPhi = sv.DanhSachDeTai[i].KinhPhi * 0.1;
+                    Console.WriteLine(sv.DanhSachDeTai[i].KinhPhi);
+                }
+
+            }
+        }
+
+        public void XuatDanhSachCacDeTaiDaDuocCapNhatKinhPhi()
+        {
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
+            capNhatVaXuatKinhPhi();
+            foreach(SinhVienDto sv in  sinhVienDtos)
+                Console.WriteLine(sv.ToString());
+        }
 
         public void readSinhVienInfoDetail()
         {
