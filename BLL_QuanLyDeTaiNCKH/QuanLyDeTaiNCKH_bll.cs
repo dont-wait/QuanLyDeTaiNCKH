@@ -69,11 +69,24 @@ namespace BLL_QuanLyDeTaiNCKH
             }
             else
             {
-                Console.WriteLine("Danh sách đề tài của giảng viên {0}:", tenGiangVien);
+
+                Console.WriteLine($"Danh sách đề tài của giang viên {tenGiangVien} tìm được:");
+
+                Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ Mã ĐT     │ Tên Đề Tài                │ Tên Giảng Viên          │ Tên Chủ Trì                  ║");
+                Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════════════════════════╣");
+
+
                 foreach (var dt in dsDeTai)
                 {
-                    Console.WriteLine(dt);
+
+                    string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen;
+
+
+                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}   ║");
                 }
+
+                Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
             }
         }
 
