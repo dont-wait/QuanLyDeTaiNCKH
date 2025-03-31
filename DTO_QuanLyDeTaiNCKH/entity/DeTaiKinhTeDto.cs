@@ -39,7 +39,7 @@ namespace DeTai1
             }
         }
 
-
+        
         public override double TinhKinhPhi()
         {
 

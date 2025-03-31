@@ -25,13 +25,15 @@ namespace DTO_QuanLyDeTaiNCKH.entity
             ThoiGianBatDau = thoiGianBatDau;
             ThoiGianKetThuc = thoiGianKetThuc;
             HoTenGiangVien = hoTenGiangVien;
+           
         }
 
         public double KinhPhi
         {
             get { return kinhPhi; }
             set {
-                kinhPhi = TinhKinhPhi();
+               // kinhPhi = TinhKinhPhi();
+                kinhPhi = value;
             }
         }
 

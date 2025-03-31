@@ -87,18 +87,19 @@ namespace BLL_QuanLyDeTaiNCKH
             }
         }
 
+        //case 6
 
         private void capNhatVaXuatKinhPhi()
         {
             foreach (var sv in sinhVienDtos)
             {
-                for(int i = 0; i < sv.DanhSachDeTai.Count; i++)
+                for (int i = 0; i < sv.DanhSachDeTai.Count; i++)
                 {
-                    sv.DanhSachDeTai[i].KinhPhi = sv.DanhSachDeTai[i].KinhPhi * 0.1;
+                    sv.DanhSachDeTai[i].KinhPhi *= 1.1; // Cập nhật Kinh Phi
                     Console.WriteLine(sv.DanhSachDeTai[i].KinhPhi);
                 }
-
             }
+       
         }
 
         public void XuatDanhSachCacDeTaiDaDuocCapNhatKinhPhi()
