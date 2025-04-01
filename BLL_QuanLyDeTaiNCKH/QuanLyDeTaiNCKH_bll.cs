@@ -95,29 +95,34 @@ namespace BLL_QuanLyDeTaiNCKH
         {
             foreach (var sv in sinhVienDtos)
             {
-                //for (int i = 0; i < sv.DanhSachDeTai.Count; i++)
-                //{
-                //    sv.DanhSachDeTai[i].KinhPhi *= 1.10; // Cập nhật Kinh Phi
-                //    Console.WriteLine(sv.DanhSachDeTai[i].KinhPhi);
-                //}
-
                 for (int i = 0; i < sv.DanhSachDeTai.Count; i++)
                 {
-                    Console.WriteLine($"Trước khi cập nhật: {sv.DanhSachDeTai[i].KinhPhi}");
                     sv.DanhSachDeTai[i].KinhPhi *= 1.1; // Cập nhật Kinh Phi
-                    Console.WriteLine($"Sau khi cập nhật: {sv.DanhSachDeTai[i].KinhPhi}");
                 }
             }
-       
+        
         }
-
         public void XuatDanhSachCacDeTaiDaDuocCapNhatKinhPhi()
         {
             Console.InputEncoding = Encoding.UTF8;
             Console.OutputEncoding = Encoding.UTF8;
+
             capNhatVaXuatKinhPhi();
-            foreach(SinhVienDto sv in  sinhVienDtos)
-                Console.WriteLine(sv.ToString());
+
+            Console.WriteLine("Danh sách đề tài sau khi cập nhật kinh phí:");
+            Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ Mã ĐT     │ Tên Đề Tài                │ Kinh Phí (VNĐ)                     ║");
+            Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════╣");
+
+            foreach (var sv in sinhVienDtos)
+            {
+                foreach (var dt in sv.DanhSachDeTai)
+                {
+                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.KinhPhi,-20:N0} VNĐ           ║");
+                }
+            }
+
+            Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════╝");
         }
 
         public void readSinhVienInfoDetail()
@@ -177,7 +182,7 @@ namespace BLL_QuanLyDeTaiNCKH
                     string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen;
 
                     
-                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}   | {dt.TinhKinhPhi(),-25} ║");
+                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}    ║");
                 }
 
                 Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
