@@ -63,7 +63,7 @@ namespace DAL_QuanLyDeTaiNCKH
             sinhVien.Lop = Console.ReadLine();
             Console.Write("Nhập số lượng đề tài: ");
             int n = int.Parse(Console.ReadLine());
-            for(int i = 0; i < n; i++)
+            for(int i = 0; i < n; i++) 
             {
                 Console.WriteLine($"Nhập thông tin đề tài thứ #{i+1}");
                 sinhVien.DanhSachDeTai.Add(AddDeTaiDTO());

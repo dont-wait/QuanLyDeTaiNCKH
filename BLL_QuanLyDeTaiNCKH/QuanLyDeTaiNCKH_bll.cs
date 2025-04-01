@@ -17,6 +17,8 @@ namespace BLL_QuanLyDeTaiNCKH
             sinhVienDtos = new List<SinhVienDto>();
         }
         
+        // casse  4
+        
         public List<DeTaiDto> timKiemDeTai(string tuKhoa)
         {
             
@@ -27,7 +29,7 @@ namespace BLL_QuanLyDeTaiNCKH
             }
 
             List<DeTaiDto> danhSachDeTai = new List<DeTaiDto>();
-
+            Console.WriteLine();
            
             foreach (var sv in sinhVienDtos)
             {
@@ -93,10 +95,17 @@ namespace BLL_QuanLyDeTaiNCKH
         {
             foreach (var sv in sinhVienDtos)
             {
+                //for (int i = 0; i < sv.DanhSachDeTai.Count; i++)
+                //{
+                //    sv.DanhSachDeTai[i].KinhPhi *= 1.10; // Cập nhật Kinh Phi
+                //    Console.WriteLine(sv.DanhSachDeTai[i].KinhPhi);
+                //}
+
                 for (int i = 0; i < sv.DanhSachDeTai.Count; i++)
                 {
+                    Console.WriteLine($"Trước khi cập nhật: {sv.DanhSachDeTai[i].KinhPhi}");
                     sv.DanhSachDeTai[i].KinhPhi *= 1.1; // Cập nhật Kinh Phi
-                    Console.WriteLine(sv.DanhSachDeTai[i].KinhPhi);
+                    Console.WriteLine($"Sau khi cập nhật: {sv.DanhSachDeTai[i].KinhPhi}");
                 }
             }
        
@@ -168,7 +177,7 @@ namespace BLL_QuanLyDeTaiNCKH
                     string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen;
 
                     
-                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}   ║");
+                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}   | {dt.TinhKinhPhi(),-25} ║");
                 }
 
                 Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
@@ -328,9 +337,9 @@ namespace BLL_QuanLyDeTaiNCKH
         public void GetSecret()
         {
             Console.WriteLine(@"Từ ấy trong tôi bừng code gạo,
-Màn hình code đỏ cứa con tim.
-Hồn tôi ngập tràn do-for-while,
-Rất nhị phân và đầy tiếng đô-la.
+                                Màn hình code đỏ cứa con tim.
+                                Hồn tôi ngập tràn do-for-while,
+                                Rất nhị phân và đầy tiếng đô-la.
                                 Từ ấy");
         }
     }

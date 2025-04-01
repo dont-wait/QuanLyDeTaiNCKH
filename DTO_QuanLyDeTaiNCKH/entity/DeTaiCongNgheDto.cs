@@ -45,14 +45,15 @@ namespace DTO_QuanLyDeTaiNCKH.entity
 
         public override double TinhKinhPhi()
         {
-            double kinhPhi = 0;
+            kinhPhi = 0;
             if (moiTruongThucHien.ToLower() == "mobile" || moiTruongThucHien.ToLower() == "web")
                 kinhPhi = 15000000;
             else if (moiTruongThucHien.ToLower() == "window")
                 kinhPhi = 10000000;
             else
                 throw new ArgumentException("Môi trường không hợp lệ");
-            return kinhPhi - TinhPhiHoTroNghienCuu();
+            kinhPhi -= TinhPhiHoTroNghienCuu();
+            return kinhPhi;
         }
 
         public override string ToString()

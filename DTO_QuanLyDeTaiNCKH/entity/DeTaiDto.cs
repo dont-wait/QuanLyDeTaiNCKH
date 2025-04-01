@@ -32,7 +32,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         {
             get { return kinhPhi; }
             set {
-               // kinhPhi = TinhKinhPhi();
+               
                 kinhPhi = value;
             }
         }

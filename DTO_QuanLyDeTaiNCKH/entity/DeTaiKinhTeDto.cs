@@ -45,8 +45,9 @@ namespace DeTai1
 
             double tinhPhiHoTro = TinhPhiHoTroNghienCuu();
             if (soCauHoiKhaoSat > 100)
-                return kinhPhi = 12000000 - tinhPhiHoTro;
-           return kinhPhi = 7000000 - tinhPhiHoTro;
+                 kinhPhi = 12000000 - tinhPhiHoTro;
+           else kinhPhi = 7000000 - tinhPhiHoTro;
+            return kinhPhi;
         }
         public override string ToString()
         {
