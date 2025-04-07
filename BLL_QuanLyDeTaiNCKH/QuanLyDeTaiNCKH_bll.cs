@@ -211,8 +211,8 @@ namespace BLL_QuanLyDeTaiNCKH
             Console.InputEncoding = Encoding.UTF8;
             Console.OutputEncoding = Encoding.UTF8;
 
-            var dsDeTai = sinhVienDtos.SelectMany(sv => sv.DanhSachDeTai).Where(dt => dt.TinhKinhPhi() >= 10000000).ToList();
-
+            var dsDeTai = sinhVienDtos.SelectMany(sv => sv.DanhSachDeTai).Where(dt => dt.KinhPhi >= 10000000).ToList();
+            
             if (!dsDeTai.Any())
             {
                 Console.WriteLine("Không có đề tài nào có kinh phí trên 10 triệu.");
@@ -228,7 +228,7 @@ namespace BLL_QuanLyDeTaiNCKH
             {
                 string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen ?? "Không rõ";
 
-                Console.WriteLine($"║ {dt.MaDeTai,-10} ║ {dt.TenDeTai,-30} ║ {dt.HoTenGiangVien,-20}  ║ {hoTenChuTri,-20} ║ {dt.TinhKinhPhi(),12:N0}   ║");
+                Console.WriteLine($"║ {dt.MaDeTai,-10} ║ {dt.TenDeTai,-30} ║ {dt.HoTenGiangVien,-20}  ║ {hoTenChuTri,-20} ║ {dt.KinhPhi,12:N0}   ║");
             }
 
             Console.WriteLine("╚════════════╩════════════════════════════════╩═══════════════════════╩══════════════════════╩════════════════╝");
