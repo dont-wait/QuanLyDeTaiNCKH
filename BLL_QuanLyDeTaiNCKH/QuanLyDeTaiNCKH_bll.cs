@@ -294,7 +294,7 @@ namespace BLL_QuanLyDeTaiNCKH
             Console.InputEncoding = Encoding.UTF8;
             Console.OutputEncoding = Encoding.UTF8;
 
-            // Lọc ra các đề tài có số câu hỏi khảo sát lớn hơn 100
+            //  câu hỏi khảo sát lớn hơn 100
             var dsDeTai = sinhVienDtos.SelectMany(sv => sv.DanhSachDeTai).Where(dt => dt.GetTypeOfDeTai() == "Kinh tế" && ((DeTaiKinhTeDto)dt).SoCauHoiKhaoSat  > 100).ToList();
 
             if (!dsDeTai.Any())
@@ -303,7 +303,7 @@ namespace BLL_QuanLyDeTaiNCKH
                 return;
             }
 
-            // In ra danh sách các đề tài thỏa mãn điều kiện
+        
             Console.WriteLine("Danh sách đề tài có số câu hỏi khảo sát trên 100:");
             Console.WriteLine("╔════════════╦════════════════════════════════╦═══════════════════════╦══════════════════════╦════════════════╗");
             Console.WriteLine("║ Mã Đề Tài  ║ Tên Đề Tài                     ║ Giảng Viên Hướng Dẫn  ║ Tên Chủ Trì          ║ Số Câu Hỏi     ║");
@@ -336,7 +336,7 @@ namespace BLL_QuanLyDeTaiNCKH
             Console.InputEncoding = Encoding.UTF8;
             Console.OutputEncoding = Encoding.UTF8;
 
-            // Lọc ra các đề tài có thời gian thực hiện > 4 tháng
+            //  đề tài có thời gian thực hiện > 4 tháng
             var dsDeTai = sinhVienDtos
                 .SelectMany(sv => sv.DanhSachDeTai)
                 .Where(dt => TinhSoThang(dt.ThoiGianBatDau, dt.ThoiGianKetThuc) > 4)
@@ -348,7 +348,7 @@ namespace BLL_QuanLyDeTaiNCKH
                 return;
             }
 
-            // In ra danh sách các đề tài thỏa mãn điều kiện
+          
             Console.WriteLine("Danh sách đề tài có thời gian thực hiện trên 4 tháng:");
             Console.WriteLine("╔════════════╦════════════════════════════════╦═══════════════════════╦══════════════════════╦════════════════════╗");
             Console.WriteLine("║ Mã Đề Tài  ║ Tên Đề Tài                     ║ Giảng Viên Hướng Dẫn  ║ Tên Chủ Trì          ║ Thời Gian          ║");
@@ -364,7 +364,7 @@ namespace BLL_QuanLyDeTaiNCKH
 
             Console.WriteLine("╚════════════╩════════════════════════════════╩═══════════════════════╩══════════════════════╩════════════════════╝");
         }
-        public void GetSecret()
+        private void GetSecret()
         {
             Console.WriteLine(@"Từ ấy trong tôi bừng code gạo,
                                 Màn hình code đỏ cứa con tim.
