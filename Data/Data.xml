@@ -9,7 +9,7 @@
 			<TenDeTai>Mô hình sinh trắc học</TenDeTai>
 			<ThoiGianBatDau>2024-01-01</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-06-01</ThoiGianKetThuc>
-			<TenGiangVien>Hoàng Nguyễn Thế</TenGiangVien>
+			<TenGiangVien>Hoang Nguyen The</TenGiangVien>
 			<MoiTruong>web</MoiTruong>
 		</DeTai>
 		<DeTai linhVuc="KinhTe">
@@ -17,7 +17,7 @@
 			<TenDeTai>Ứng dụng Blockchain</TenDeTai>
 			<ThoiGianBatDau>2024-02-15</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-08-15</ThoiGianKetThuc>
-			<TenGiangVien>Trần Thị Hai</TenGiangVien>
+			<TenGiangVien>Tran Thi Hai</TenGiangVien>
 			<SoCauHoiKhaoSat>20</SoCauHoiKhaoSat>
 		</DeTai>
 	</SinhVien>
@@ -31,7 +31,7 @@
 			<TenDeTai>Phát triển IoT</TenDeTai>
 			<ThoiGianBatDau>2024-03-10</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-09-10</ThoiGianKetThuc>
-			<TenGiangVien>Nguyễn Anh Ba</TenGiangVien>
+			<TenGiangVien>Nguyen Anh Ba</TenGiangVien>
 			<ApDungThucTe>true</ApDungThucTe>
 		</DeTai>
 	</SinhVien>
@@ -45,7 +45,7 @@
 			<TenDeTai>Phân tích dữ liệu lớn</TenDeTai>
 			<ThoiGianBatDau>2024-01-15</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-07-15</ThoiGianKetThuc>
-			<TenGiangVien>Lê Thị Hồng</TenGiangVien>
+			<TenGiangVien>Le Thi Hong</TenGiangVien>
 			<MoiTruong>window</MoiTruong>
 		</DeTai>
 		<DeTai linhVuc="KinhTe">
@@ -53,7 +53,7 @@
 			<TenDeTai>Ứng dụng Fintech</TenDeTai>
 			<ThoiGianBatDau>2024-02-01</ThoiGianBatDau>
 			<ThoiGianKetThuc>2024-08-01</ThoiGianKetThuc>
-			<TenGiangVien>Phạm Văn Đức</TenGiangVien>
+			<TenGiangVien>Pham Van Duc</TenGiangVien>
 			<SoCauHoiKhaoSat>250</SoCauHoiKhaoSat>
 		</DeTai>
 		<DeTai linhVuc="LyThuyet">
