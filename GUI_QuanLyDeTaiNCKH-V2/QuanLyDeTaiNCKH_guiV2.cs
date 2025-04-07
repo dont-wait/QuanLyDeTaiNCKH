@@ -20,7 +20,7 @@ namespace GUI_QuanLyDeTaiNCKHV2
             while (true)
             {
                 PrintMenu();
-                Console.Write("Chọn 0...10: ");
+                Console.Write("Chọn 0...11: ");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
