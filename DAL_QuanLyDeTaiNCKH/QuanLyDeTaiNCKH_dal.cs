@@ -52,17 +52,49 @@ namespace DAL_QuanLyDeTaiNCKH
 
         public SinhVienDto AddInfoSVDeTail()
         {
-            Console.InputEncoding = Encoding.UTF8;  
-
+            Console.InputEncoding = Encoding.UTF8;
             SinhVienDto sinhVien = new SinhVienDto();
-            Console.Write("Nhập mã sinh viên: ");
-            sinhVien.MaSinhVien = Console.ReadLine();
+            while(true)
+            {
+                Console.Write("Nhập mã sinh viên: ");
+                try
+                {
+                    sinhVien.MaSinhVien = Console.ReadLine();
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Lỗi {ex.Message}");
+                    Console.WriteLine("Vui lòng nhập lại mã sinh viên\n");
+                }
+
+            }
             Console.Write("Nhập họ tên sinh viên: ");
             sinhVien.HoTen = Console.ReadLine();
-            Console.Write("Nhập lớp: ");
-            sinhVien.Lop = Console.ReadLine();
-            Console.Write("Nhập số lượng đề tài: ");
-            int n = int.Parse(Console.ReadLine());
+
+            while (true)
+            {
+                Console.Write("Nhập lớp: ");
+                try
+                {
+                    sinhVien.Lop = Console.ReadLine();
+                    break;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Lỗi {ex.Message}");
+                }
+            }
+
+            int n;
+            while (true) 
+            {
+                Console.Write("Nhập số lượng đề tài: ");
+                if (int.TryParse(Console.ReadLine(), out n) && n >= 0)
+                    break;
+                Console.WriteLine("Vui lòng nhập số nguyên không âm");
+            }
             for(int i = 0; i < n; i++) 
             {
                 Console.WriteLine($"Nhập thông tin đề tài thứ #{i+1}");
@@ -92,34 +124,50 @@ namespace DAL_QuanLyDeTaiNCKH
             deTai.TenDeTai = Console.ReadLine();
             while (true)
             {
-                Console.Write("Nhập thời gian bắt đầu (dd/MM/yyyy): ");
-                string inputBatDau = Console.ReadLine();
-                if (DateTime.TryParseExact(inputBatDau, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime thoiGianBatDau))
+                try
                 {
-                    deTai.ThoiGianBatDau = thoiGianBatDau;
-                    break; // Thoát vòng lặp nếu nhập đúng
+                    Console.Write("Nhập thời gian bắt đầu (dd/MM/yyyy): ");
+                    string inputBatDau = Console.ReadLine();
+
+                    if (DateTime.TryParseExact(inputBatDau, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime thoiGianBatDau))
+                    {
+                        deTai.ThoiGianBatDau = thoiGianBatDau; 
+                        break; 
+                    }
+                    else
+                    {
+                        Console.WriteLine("Định dạng không đúng! Vui lòng nhập lại theo kiểu dd/MM/yyyy (ví dụ: 25/12/2023).");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Định dạng không đúng! Vui lòng nhập lại theo kiểu dd/MM/yyyy (ví dụ: 25/12/2023).");
+                    Console.WriteLine($"Lỗi: {ex.Message}"); // lỗi do setter ném ra
                 }
             }
 
-            // Nhập thời gian kết thúc với định dạng dd/MM/yyyy
             while (true)
             {
-                Console.Write("Nhập thời gian kết thúc (dd/MM/yyyy): ");
-                string inputKetThuc = Console.ReadLine();
-                if (DateTime.TryParseExact(inputKetThuc, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime thoiGianKetThuc))
+                try
                 {
-                    deTai.ThoiGianKetThuc = thoiGianKetThuc;
-                    break; // Thoát vòng lặp nếu nhập đúng
+                    Console.Write("Nhập thời gian kết thúc (dd/MM/yyyy): ");
+                    string inputKetThuc = Console.ReadLine();
+
+                    if (DateTime.TryParseExact(inputKetThuc, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime thoiGianKetThuc))
+                    {
+                        deTai.ThoiGianKetThuc = thoiGianKetThuc;
+                        break; 
+                    }
+                    else
+                    {
+                        Console.WriteLine("Định dạng không đúng! Vui lòng nhập lại theo kiểu dd/MM/yyyy (ví dụ: 30/12/2023).");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Định dạng không đúng! Vui lòng nhập lại theo kiểu dd/MM/yyyy (ví dụ: 30/12/2023).");
+                    Console.WriteLine($"Lỗi: {ex.Message}"); // lỗi do setter ném ra
                 }
             }
+
             deTai.NhapThongTinDacThu();
             Console.Write("Nhập tên giảng viên hướng dẫn: ");
             deTai.HoTenGiangVien = Console.ReadLine();

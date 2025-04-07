@@ -28,7 +28,10 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         public string MaSinhVien { 
             get => maSinhVien;
             set {
-               maSinhVien = value;
+                if (value.Length == 10 && value.All(c => Char.IsDigit(c)))
+                    maSinhVien = value;
+                else
+                    throw new Exception("Mã sinh viên phải đủ 10 kí tự và là số");
             }
         }
         public string HoTen {
@@ -54,7 +57,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
                 }
                 else
                 {
-                    throw new Exception("Lớp không hợp lệ");
+                    throw new Exception("Lớp không hợp lệ | Ví dụ: 14DHTH11");
                 }
             }
         }

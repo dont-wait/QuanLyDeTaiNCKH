@@ -38,36 +38,36 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         }
 
        public DateTime ThoiGianBatDau
-        {
+       {
             get { return thoiGianBatDau; }
             set
             {
-                if (value == null)
+                if (value.Year < 2020) 
                 {
-                    throw new Exception("Khong Hop Le!");
+                    throw new Exception("Thời gian phải bắt đầu từ 2020!");
                 }
                 else
                 {
                     thoiGianBatDau = value;
                 }
             }
-        }
+       }
 
-        public DateTime ThoiGianKetThuc
+    public DateTime ThoiGianKetThuc
+    {
+        get { return thoiGianKetThuc; }
+        set
         {
-            get { return thoiGianKetThuc; }
-            set
+            if (value <= thoiGianBatDau) 
             {
-                if (value == null)
-                {
-                    throw new Exception("Khong Hop Le!");
-                }
-                else
-                {
-                    thoiGianKetThuc = value;
-                }
+                throw new Exception("Thời gian kết thúc phải sau thời gian bắt đầu!");
+            }
+            else
+            {
+                thoiGianKetThuc = value;
             }
         }
+    }
 
         public string HoTenGiangVien
         {

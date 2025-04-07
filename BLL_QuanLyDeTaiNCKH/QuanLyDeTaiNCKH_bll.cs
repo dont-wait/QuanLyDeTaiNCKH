@@ -200,7 +200,7 @@ namespace BLL_QuanLyDeTaiNCKH
                     Console.Write("Nhập mã sinh viên để thêm đề tài: ");
                     string maSinhVien = Console.ReadLine();
                     dal.ThemDeTaiChoSinhVien(maSinhVien);
-
+                    break;
                 }
                 catch (Exception e)
                 {
