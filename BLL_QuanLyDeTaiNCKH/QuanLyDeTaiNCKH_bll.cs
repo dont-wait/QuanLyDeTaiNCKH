@@ -80,6 +80,7 @@ namespace BLL_QuanLyDeTaiNCKH
             {
                 foreach (var dt in sv.DanhSachDeTai)
                 {
+                    if (dt.KinhPhi > 0) continue;
                     dt.KinhPhi = dt.TinhKinhPhi();
                 }
             }
@@ -132,9 +133,9 @@ namespace BLL_QuanLyDeTaiNCKH
             {
                 Console.WriteLine("Danh sách đề tài tìm được:");
 
-                Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════════════╗");
-                Console.WriteLine("║ Mã ĐT     │ Tên Đề Tài                │ Tên Giảng Viên          │ Tên Chủ Trì                  ║");
-                Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════════════════════════╣");
+                Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ Mã ĐT     │ Tên Đề Tài                │ Tên Giảng Viên           │ Tên Chủ Trì                   ║");
+                Console.WriteLine("╠══════════════════════════════════════════════════════════════════════════════════════════════════╣");
 
 
                 foreach (var dt in dsDeTai)
@@ -143,10 +144,10 @@ namespace BLL_QuanLyDeTaiNCKH
                     string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen;
 
 
-                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}    ║");
+                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}     ║");
                 }
 
-                Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
+                Console.WriteLine("╚══════════════════════════════════════════════════════════════════════════════════════════════════╝");
             }
         }
 

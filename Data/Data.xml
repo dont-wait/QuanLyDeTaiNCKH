@@ -24,7 +24,7 @@
 
 	<SinhVien>
 		<MaSinhVien>2001239999</MaSinhVien>
-		<HoTen>Nguyễn Chín</HoTen>
+		<HoTen>Nguyen Chin</HoTen>
 		<Lop>19DHBM02</Lop>
 		<DeTai linhVuc="LyThuyet">
 			<MaDeTai>DT003</MaDeTai>
@@ -38,7 +38,7 @@
 
 	<SinhVien>
 		<MaSinhVien>2001240001</MaSinhVien>
-		<HoTen>Trần Văn An</HoTen>
+		<HoTen>Tran Van An</HoTen>
 		<Lop>20DHTH01</Lop>
 		<DeTai linhVuc="CongNghe">
 			<MaDeTai>DT004</MaDeTai>
