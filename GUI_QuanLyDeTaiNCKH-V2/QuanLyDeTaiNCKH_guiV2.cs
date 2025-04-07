@@ -36,7 +36,7 @@ namespace GUI_QuanLyDeTaiNCKHV2
                         _quanLyDeTaiNCKH_bll.XuatTTSinhVien();
                         break;
                     case 4:
-                        _quanLyDeTaiNCKH_bll.TinhKinhPhi();
+                        _quanLyDeTaiNCKH_bll.TinhKinhPhiChoTatCaDeTai();
                         break;
                     case 5:
                         _quanLyDeTaiNCKH_bll.XuatDanhSachTimKiemDeTai();

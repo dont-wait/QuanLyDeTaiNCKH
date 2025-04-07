@@ -17,10 +17,80 @@ namespace BLL_QuanLyDeTaiNCKH
             sinhVienDtos = new List<SinhVienDto>();
         }
         
-        // casse  5
-        public List<DeTaiDto> timKiemDeTai(string tuKhoa)
+       
+
+        //Case 1: Sang
+        public void readSinhVienInfoDetail()
         {
-            
+            sinhVienDtos = dal.DocDeTaiNCKH("../../../Data/Data.xml");
+        }
+
+        public void PrintHeader()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine("╔════════════╦══════════════════════╦════════════╦═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║ Mã SV      ║ Họ Tên               ║ Lớp        ║ Mã ĐT  Tên Đề Tài                           Loại ĐT    TG BĐ      TG KT       GVHD                 Kinh Phí     ║");
+            Console.WriteLine("╚════════════╧══════════════════════╧════════════╧═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+        }
+
+
+        //case 2: Sang
+        public bool AddNewDeTai()
+        {
+
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Nhập mã sinh viên để thêm đề tài: ");
+                    string maSinhVien = Console.ReadLine();
+                    dal.ThemDeTaiChoSinhVien(maSinhVien);
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Lỗi {e}");
+                    Console.WriteLine("Vui lòng nhập lại mã số sinh viên");
+                }
+            }
+            return true;
+
+
+        }
+
+        //case 3: Sang
+        public void XuatTTSinhVien()
+        {
+            if(dal.ListSinhVien.Count == 0)
+            {
+                Console.WriteLine("Danh sách sinh viên rỗng!");
+                return;
+            }
+            PrintHeader();
+            foreach (var sv in dal.ListSinhVien)
+            {
+                Console.WriteLine(sv);
+            }
+        }
+        //case 4: Sang
+        public void TinhKinhPhiChoTatCaDeTai()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            foreach (var sv in sinhVienDtos)
+            {
+                foreach (var dt in sv.DanhSachDeTai)
+                {
+                    dt.KinhPhi = dt.TinhKinhPhi();
+                }
+            }
+            Console.WriteLine("Kinh phí đã được tính cho tất cả các đề tài.");
+        }
+
+
+        // case 5: Hiếu
+        private List<DeTaiDto> timKiemDeTai(string tuKhoa)
+        {
+
             if (sinhVienDtos == null || sinhVienDtos.Count == 0)
             {
                 Console.WriteLine("Danh sách sinh viên chưa được khởi tạo hoặc trống.");
@@ -29,21 +99,56 @@ namespace BLL_QuanLyDeTaiNCKH
 
             List<DeTaiDto> danhSachDeTai = new List<DeTaiDto>();
             Console.WriteLine();
-           
+
             foreach (var sv in sinhVienDtos)
             {
-               
+
                 danhSachDeTai.AddRange(sv.DanhSachDeTai.Where(dt =>
                     dt.MaDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     dt.TenDeTai.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     dt.HoTenGiangVien.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    sv.HoTen.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0));  
+                    sv.HoTen.IndexOf(tuKhoa, StringComparison.OrdinalIgnoreCase) >= 0));
             }
 
             return danhSachDeTai;
         }
 
+        //case 5: Hiếu 
+        public void XuatDanhSachTimKiemDeTai()
+        {
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
 
+            Console.Write("Nhập thông tin tìm kiếm (Mã số đề tài, Tên đề tài, Tên giảng viên hoặc Tên người chủ trì): ");
+            string tuKhoa = Console.ReadLine();
+
+            List<DeTaiDto> dsDeTai = timKiemDeTai(tuKhoa);
+
+            if (dsDeTai == null || dsDeTai.Count == 0)
+            {
+                Console.WriteLine("Không tìm thấy đề tài nào với thông tin '{0}'.", tuKhoa);
+            }
+            else
+            {
+                Console.WriteLine("Danh sách đề tài tìm được:");
+
+                Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║ Mã ĐT     │ Tên Đề Tài                │ Tên Giảng Viên          │ Tên Chủ Trì                  ║");
+                Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════════════════════════╣");
+
+
+                foreach (var dt in dsDeTai)
+                {
+
+                    string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen;
+
+
+                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}    ║");
+                }
+
+                Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            }
+        }
 
         //case 6: Hiếu
         private List<DeTaiDto> timKiemDeTaiTheoGiangVien(string tenGiangVien)
@@ -99,7 +204,7 @@ namespace BLL_QuanLyDeTaiNCKH
                     sv.DanhSachDeTai[i].KinhPhi *= 1.1; // Cập nhật Kinh Phi
                 }
             }
-        
+
         }
         public void XuatDanhSachCacDeTaiDaDuocCapNhatKinhPhi()
         {
@@ -124,109 +229,7 @@ namespace BLL_QuanLyDeTaiNCKH
             Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════╝");
         }
 
-        public void readSinhVienInfoDetail()
-        {
-            sinhVienDtos = dal.DocDeTaiNCKH("../../../Data/Data.xml");
-        }
-
-        public void PrintHeader()
-        {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine("╔════════════╦══════════════════════╦════════════╦═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║ Mã SV      ║ Họ Tên               ║ Lớp        ║ Mã ĐT  Tên Đề Tài                           Loại ĐT    TG BĐ      TG KT       GVHD                 Kinh Phí     ║");
-            Console.WriteLine("╚════════════╧══════════════════════╧════════════╧═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-        }
-
-        //case 3
-        public void XuatTTSinhVien()
-        {
-            if(dal.ListSinhVien.Count == 0)
-            {
-                Console.WriteLine("Danh sách sinh viên rỗng!");
-                return;
-            }
-            PrintHeader();
-            foreach (var sv in dal.ListSinhVien)
-            {
-                Console.WriteLine(sv);
-            }
-        }
-        //case 4 tính kinh phí
-        public void TinhKinhPhi()
-        {
-            Console.OutputEncoding = Encoding.UTF8;
-            foreach (var sv in sinhVienDtos)
-            {
-                foreach (var dt in sv.DanhSachDeTai)
-                {
-                    dt.KinhPhi = dt.TinhKinhPhi();
-                }
-            }
-            Console.WriteLine("Kinh phí đã được tính cho tất cả các đề tài.");
-        }
-
-
-        //case 5 
-        public void XuatDanhSachTimKiemDeTai()
-        {
-            Console.InputEncoding = Encoding.UTF8;
-            Console.OutputEncoding = Encoding.UTF8;
-
-            Console.Write("Nhập thông tin tìm kiếm (Mã số đề tài, Tên đề tài, Tên giảng viên hoặc Tên người chủ trì): ");
-            string tuKhoa = Console.ReadLine();
-
-            List<DeTaiDto> dsDeTai = timKiemDeTai(tuKhoa);
-
-            if (dsDeTai == null || dsDeTai.Count == 0)
-            {
-                Console.WriteLine("Không tìm thấy đề tài nào với thông tin '{0}'.", tuKhoa);
-            }
-            else
-            {
-                Console.WriteLine("Danh sách đề tài tìm được:");
-               
-                Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════════════╗");
-                Console.WriteLine("║ Mã ĐT     │ Tên Đề Tài                │ Tên Giảng Viên          │ Tên Chủ Trì                  ║");
-                Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════════════════════════╣");
-
-                
-                foreach (var dt in dsDeTai)
-                {
-                    
-                    string hoTenChuTri = sinhVienDtos.FirstOrDefault(sv => sv.DanhSachDeTai.Contains(dt))?.HoTen;
-
-                    
-                    Console.WriteLine($"║ {dt.MaDeTai,-10}│ {dt.TenDeTai,-25} │ {dt.HoTenGiangVien,-25}│ {hoTenChuTri,-25}    ║");
-                }
-
-                Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            }
-        }
-
-
-        //case 2
-        public bool AddNewDeTai()
-        {
-
-            while(true)
-            {
-                try {
-                    Console.Write("Nhập mã sinh viên để thêm đề tài: ");
-                    string maSinhVien = Console.ReadLine();
-                    dal.ThemDeTaiChoSinhVien(maSinhVien);
-                    break;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Lỗi {e}");
-                    Console.WriteLine("Vui lòng nhập lại mã số sinh viên");
-                }
-            }
-            return true; 
-            
-
-        }
-        // case 8
+        // case 8: Thành
         public void XuatDanhSachDeTai_CoKinhPhiHon10Trieu()
         {
             Console.InputEncoding = Encoding.UTF8;
@@ -256,7 +259,7 @@ namespace BLL_QuanLyDeTaiNCKH
         }
 
 
-        //case 9
+        //case 9: Thành
         public void XuatDanhSachDeTaiLyThuyetTrienKhai()
 {
                 Console.InputEncoding = Encoding.UTF8;
@@ -284,7 +287,7 @@ namespace BLL_QuanLyDeTaiNCKH
 
                 Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
             }
-        //case 10
+        //case 10: Thành
         public void XuatDanhSachDeTaiCoCauHoiTren100()
         {
             Console.InputEncoding = Encoding.UTF8;
@@ -315,7 +318,7 @@ namespace BLL_QuanLyDeTaiNCKH
             Console.WriteLine("╚════════════╩════════════════════════════════╩═══════════════════════╩══════════════════════╩════════════════╝");
         }
 
-        // case 11
+        // case 11: Thành
         private int TinhSoNgay(DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
         {
             return (thoiGianKetThuc - thoiGianBatDau).Days;
