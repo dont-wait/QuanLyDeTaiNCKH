@@ -69,8 +69,21 @@ namespace DAL_QuanLyDeTaiNCKH
                 }
 
             }
-            Console.Write("Nhập họ tên sinh viên: ");
-            sinhVien.HoTen = Console.ReadLine();
+            while(true)
+            {
+                try
+                {
+                    Console.Write("Nhập họ tên sinh viên: ");
+                    sinhVien.HoTen = Console.ReadLine();
+                    break;
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Lỗi: {ex.Message}");
+                }
+            }
+
+           
 
             while (true)
             {
@@ -107,16 +120,24 @@ namespace DAL_QuanLyDeTaiNCKH
         {
             Console.InputEncoding = Encoding.UTF8;
             DeTaiDto deTai = null;
-            do
+            while(true)
             {
-                Console.Write("Nhập lĩnh vực của đề tài (CongNghe/KinhTe/LyThuyet): ");
-                string typeNguyenCuu = Console.ReadLine();
-                deTai = util.NewObjectByClassName(typeNguyenCuu);
-                if (deTai == null)
+                try { 
+                    Console.Write("Nhập lĩnh vực của đề tài (CongNghe/KinhTe/LyThuyet): ");
+                    string typeNguyenCuu = Console.ReadLine();
+                    deTai = util.NewObjectByClassName(typeNguyenCuu);
+                    if (deTai == null)
+                    {
+                        Console.WriteLine("Lĩnh vực không hợp lệ! Vui lòng nhập lại.");
+                    }
+                    break;
+
+                }catch(Exception ex)
                 {
-                    Console.WriteLine("Lĩnh vực không hợp lệ! Vui lòng nhập lại.");
+                    Console.WriteLine($"Lỗi {ex.Message}");
+                    Console.WriteLine("Vui long nhap CongNghe/KinhTe/LyThuyet");
                 }
-            } while (deTai == null);
+            }
 
             Console.Write("Nhập mã đề tài: ");
             deTai.MaDeTai = Console.ReadLine();

@@ -42,9 +42,9 @@ namespace DTO_QuanLyDeTaiNCKH.entity
             get { return thoiGianBatDau; }
             set
             {
-                if (value.Year < 2020) 
+                if (value.Year < 2023) 
                 {
-                    throw new Exception("Thời gian phải bắt đầu từ 2020!");
+                    throw new Exception("Thời gian phải bắt đầu từ 2023!");
                 }
                 else
                 {
