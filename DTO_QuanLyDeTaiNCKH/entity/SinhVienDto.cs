@@ -15,7 +15,7 @@ namespace DTO_QuanLyDeTaiNCKH.entity
         private List<DeTaiDto> danhSachDeTai;
         public SinhVienDto()
         {
-            new List<DeTaiDto>();
+            danhSachDeTai = new List<DeTaiDto>();
         } 
 
         public SinhVienDto(string maSinhVien, string hoTen, string lop)

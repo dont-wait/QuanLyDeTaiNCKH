@@ -193,17 +193,24 @@ namespace BLL_QuanLyDeTaiNCKH
         //case 2
         public bool AddNewDeTai()
         {
-            Console.Write("Nhập mã sinh viên để thêm đề tài: ");
-            string maSinhVien = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(maSinhVien))
+            while(true)
             {
-                Console.WriteLine("Mã sinh viên không được để trống!");
-                return false;
-            }
+                try {
+                    Console.Write("Nhập mã sinh viên để thêm đề tài: ");
+                    string maSinhVien = Console.ReadLine();
+                    dal.ThemDeTaiChoSinhVien(maSinhVien);
 
-            dal.ThemDeTaiChoSinhVien(maSinhVien);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Lỗi {e}");
+                    Console.WriteLine("Vui lòng nhập lại mã số sinh viên");
+                }
+            }
             return true; 
+            
+
         }
         // case 7
         public void XuatDanhSachDeTai_CoKinhPhiHon10Trieu()
