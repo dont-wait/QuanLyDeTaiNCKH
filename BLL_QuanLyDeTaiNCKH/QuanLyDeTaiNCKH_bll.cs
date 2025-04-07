@@ -17,8 +17,7 @@ namespace BLL_QuanLyDeTaiNCKH
             sinhVienDtos = new List<SinhVienDto>();
         }
         
-        // casse  4
-        
+        // casse  5
         public List<DeTaiDto> timKiemDeTai(string tuKhoa)
         {
             
@@ -46,7 +45,7 @@ namespace BLL_QuanLyDeTaiNCKH
 
 
 
-        //case 5: Hiếu
+        //case 6: Hiếu
         private List<DeTaiDto> timKiemDeTaiTheoGiangVien(string tenGiangVien)
         {
             return sinhVienDtos.SelectMany(sv => sv.DanhSachDeTai)
@@ -89,7 +88,7 @@ namespace BLL_QuanLyDeTaiNCKH
             }
         }
 
-        //case 6
+        //case 7
 
         private void capNhatVaXuatKinhPhi()
         {
@@ -152,7 +151,22 @@ namespace BLL_QuanLyDeTaiNCKH
                 Console.WriteLine(sv);
             }
         }
-        //case 4 
+        //case 4 tính kinh phí
+        public void TinhKinhPhi()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            foreach (var sv in sinhVienDtos)
+            {
+                foreach (var dt in sv.DanhSachDeTai)
+                {
+                    dt.KinhPhi = dt.TinhKinhPhi();
+                }
+            }
+            Console.WriteLine("Kinh phí đã được tính cho tất cả các đề tài.");
+        }
+
+
+        //case 5 
         public void XuatDanhSachTimKiemDeTai()
         {
             Console.InputEncoding = Encoding.UTF8;
@@ -212,7 +226,7 @@ namespace BLL_QuanLyDeTaiNCKH
             
 
         }
-        // case 7
+        // case 8
         public void XuatDanhSachDeTai_CoKinhPhiHon10Trieu()
         {
             Console.InputEncoding = Encoding.UTF8;
@@ -242,7 +256,7 @@ namespace BLL_QuanLyDeTaiNCKH
         }
 
 
-        //case 8
+        //case 9
         public void XuatDanhSachDeTaiLyThuyetTrienKhai()
 {
                 Console.InputEncoding = Encoding.UTF8;
@@ -270,7 +284,7 @@ namespace BLL_QuanLyDeTaiNCKH
 
                 Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════╝");
             }
-        //case 9
+        //case 10
         public void XuatDanhSachDeTaiCoCauHoiTren100()
         {
             Console.InputEncoding = Encoding.UTF8;
@@ -301,7 +315,7 @@ namespace BLL_QuanLyDeTaiNCKH
             Console.WriteLine("╚════════════╩════════════════════════════════╩═══════════════════════╩══════════════════════╩════════════════╝");
         }
 
-        // case 10
+        // case 11
         private int TinhSoNgay(DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
         {
             return (thoiGianKetThuc - thoiGianBatDau).Days;
